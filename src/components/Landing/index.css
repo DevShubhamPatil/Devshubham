@@ -1,0 +1,109 @@
+/* ---------------------------------------------------------- Avatar -------------------------------------------------------------- */
+.cont2{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    /* background-color: rgb(244,249,252); */
+    background-color: rgb(43, 115, 160);
+    justify-content:  space-evenly;
+    align-items: center;
+
+}
+.bodycontainer{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    transform: scale(1.5);
+    mix-blend-mode: darken;
+}
+.face{
+    width: 200px;
+    height: 230px;
+    mix-blend-mode: darken; 
+    transition: transform 0.3s ease-out;
+
+}
+.eyebroLeft{
+    width: 35px;
+    height: 7px;
+    position: absolute;
+    left: 118px;
+    top: 97px;
+    transform: rotate(8deg);
+    mix-blend-mode: darken; 
+    transition: transform 0.3s ease-out;
+
+}
+.eyebroRight{
+    width: 35px;
+    height: 7px;
+    position: absolute;
+    left: 45px;
+    top: 97px;
+    transform: rotate(-8deg);
+    mix-blend-mode: darken; 
+    transition: transform 0.3s ease-out;
+
+}
+.eyeLeft{
+    width: 15px;
+    position: absolute;
+    mix-blend-mode: darken; 
+    left: 60px;
+    top: 122px;
+    transition: transform 0.3s ease-out;
+
+}
+.eyeRight{
+    width: 15px;
+    position: absolute;
+    left: 127px;
+    top: 122px;
+    mix-blend-mode: darken; 
+    transition: transform 0.3s ease-out;
+
+}
+.body{
+    width: 325px;
+    position: absolute;
+    left: -60px;
+    top: 216px;
+    mix-blend-mode: darken; 
+}
+/* ---------------------------------------------------------- Heading -------------------------------------------------------------- */
+
+.headline{
+    /* position: relative; */
+    height: 230px;
+    border: black 2px solid ;
+}
+.line1{
+    font-family:'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 18px;
+}
+.name{
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    font-weight:600;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 88%;
+}
+.subname{
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    font-weight:600;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 72px;
+}
+@media only screen and (max-width: 1680px) {
+    .cont2 {
+    flex-direction: column;
+    align-items: center;
+    }
+}
+@media only screen and (max-width: 1680px) {
+    .bodycontainer {
+
+    transform: scale(1);
+    }
+}
