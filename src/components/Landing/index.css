@@ -1,109 +1,216 @@
 /* ---------------------------------------------------------- Avatar -------------------------------------------------------------- */
-.cont2{
+.container {
     width: 100%;
     height: 100vh;
     display: flex;
-    /* background-color: rgb(244,249,252); */
-    background-color: rgb(43, 115, 160);
-    justify-content:  space-evenly;
+    background-color: rgb(178, 221, 235);
+    /* background-color: rgb(43, 115, 160); */
+    justify-content: center;
     align-items: center;
+    /* overflow-y: scroll; */
+}::-webkit-scrollbar {
+    display: none;
+}
 
-}
-.bodycontainer{
-    width: fit-content;
-    height: fit-content;
+.bodycontainer {
+    width: 300px;
+    height: 450px;
     position: relative;
-    transform: scale(1.5);
+    transform: scale(1);
     mix-blend-mode: darken;
+    margin-left: 10vw;
 }
-.face{
+
+.face {
     width: 200px;
     height: 230px;
-    mix-blend-mode: darken; 
+    mix-blend-mode: darken;
     transition: transform 0.3s ease-out;
 
 }
-.eyebroLeft{
+
+.eyebroLeft {
     width: 35px;
     height: 7px;
     position: absolute;
     left: 118px;
     top: 97px;
     transform: rotate(8deg);
-    mix-blend-mode: darken; 
+    mix-blend-mode: darken;
     transition: transform 0.3s ease-out;
 
 }
-.eyebroRight{
+
+.eyebroRight {
     width: 35px;
     height: 7px;
     position: absolute;
     left: 45px;
     top: 97px;
     transform: rotate(-8deg);
-    mix-blend-mode: darken; 
+    mix-blend-mode: darken;
     transition: transform 0.3s ease-out;
 
 }
-.eyeLeft{
+
+.eyeLeft {
     width: 15px;
     position: absolute;
-    mix-blend-mode: darken; 
+    mix-blend-mode: darken;
     left: 60px;
     top: 122px;
     transition: transform 0.3s ease-out;
 
 }
-.eyeRight{
+
+.eyeRight {
     width: 15px;
     position: absolute;
     left: 127px;
     top: 122px;
-    mix-blend-mode: darken; 
+    mix-blend-mode: darken;
     transition: transform 0.3s ease-out;
 
 }
-.body{
+
+.body {
     width: 325px;
     position: absolute;
     left: -60px;
     top: 216px;
-    mix-blend-mode: darken; 
+    mix-blend-mode: darken;
 }
+
 /* ---------------------------------------------------------- Heading -------------------------------------------------------------- */
 
-.headline{
-    /* position: relative; */
-    height: 230px;
-    border: black 2px solid ;
+.headline {
+    min-width: 340px;
+    margin-right: 1vw;
+    padding: 20px;
+    box-sizing: border-box;
 }
-.line1{
-    font-family:'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+
+.line1 {
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 18px;
+    font-size: 1.2rem;
+    line-height: 1px;
+    padding-left: 7px;
+
 }
-.name{
+
+.name {
     font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-    font-weight:600;
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    line-height: 88%;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 70px;
+    letter-spacing: -3px;
+    word-spacing: 10px;
 }
-.subname{
+
+.whatIdo {
     font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-    font-weight:600;
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    line-height: 72px;
+    color: rgb(19, 19, 19);
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: -2px;
+    padding-left: 7px;
 }
-@media only screen and (max-width: 1680px) {
-    .cont2 {
-    flex-direction: column;
+
+.actioncall {
+    display: flex;
+    justify-content: center;
+}
+
+.actioncall button {
+    all: unset;
+    width: fit-content;
+    height: 50px;
+    border: black 2px solid;
+    margin: 20px 10px 5px 10px;
+    padding: 2px 15px;
+    border-radius: 50px / 100%;
+    display: flex;
+}
+
+.actioncall button .SVGs {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    margin: 5px 0px;
+    padding: 5px 0;
+}
+
+.btntxt {
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    display: flex;
+    height: 100%;
     align-items: center;
+    font-size: 1.2rem;
+}
+
+.MyLinks {
+    margin-top: 10px;
+    height: 40px;
+    /* border: black 1px solid; */
+    display: flex;
+    justify-content: center;
+}
+
+.SVGs {
+    /* border: black 1px solid; */
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    margin: 5px 10px ;
+    stroke: black;
+    fill: none;
+}
+
+.SVGs:hover:not(#resume) {
+    transform: scale(1.2);
+    stroke: rgb(71, 61, 161);
+}
+
+@media (max-width:1176px) {
+    .name {
+        font-size: 40px;
+        line-height: 35px;
+        padding-left: 3px;
+    }
+
+    .whatIdo {
+        font-size: 35px;
+        line-height: 50px;
     }
 }
-@media only screen and (max-width: 1680px) {
-    .bodycontainer {
 
-    transform: scale(1);
+@media (max-width:825px) {
+    .container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bodycontainer {
+        transform: scale(0.6);
+    }
+
+    .name {
+        font-size: 30px;
+        line-height: 35px;
+        padding-left: 3px;
+        letter-spacing: -1px;
+        word-spacing: 5px;
+
+    }
+
+    .whatIdo {
+        font-size: 23px;
+        line-height: 50px;
+        letter-spacing: -1px;
+        padding-left: 3px;
+
     }
 }

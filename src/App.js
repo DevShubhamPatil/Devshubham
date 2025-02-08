@@ -2,16 +2,30 @@ import './App.css';
 import Landing from './components/Landing';
 import LoadingAnimation from './components/LoadingAnimation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/navbar'
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [showApp, setShowApp] = useState(false);
+  useEffect(() => {
+      const timer = setTimeout(() => {
+          setShowApp(true);
+      }, 3500); // 3-second delay
+
+      return () => clearTimeout(timer);
+  }, []);
   return (
-    <div className="App">
+    <>
+    <LoadingAnimation/>
+    {showApp &&<div className="App">
       <BrowserRouter>
+      <Navbar/>
         <Routes>
           <Route path='/' element={<Landing/>}></Route>
         </Routes>
       </BrowserRouter>
-    </div>
+    </div>}
+    </>
   );
 }
 
