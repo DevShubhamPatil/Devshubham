@@ -36,7 +36,7 @@ export const fileDownload = <svg viewBox="0 0 24 24" fill="none" stroke="black" 
 </svg>
 
 export const logo =
-    <svg className="logo"  stroke-linejoin="round" viewBox="38 38 124 124">
+    <svg className="logo" id="logo" stroke-linejoin="round" viewBox="38 38 124 124">
         <polygon points="100,50 60,75 60,125 100,150 140,125 140,75 100,50" fill="none" 
              strokeLinecap="round">
         </polygon>

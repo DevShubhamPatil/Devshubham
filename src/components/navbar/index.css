@@ -2,14 +2,18 @@
     background-color: rgb(178, 221, 235);
     display: flex;
     /* border: 2px red solid; */
+    opacity: 1;
     justify-content: space-between;
     height: 70px;
     overflow: visible;
-    /* box-shadow: 0px 0px 15px 0px; */
     position: sticky;
     top:0px;
+    /* transition: 0.2s ease-in; */
+    z-index: 99;
 }
-
+.shadow{
+    box-shadow: 0px 0px 15px 0px;
+}
 .logocontainer{
     position: relative;
     display: flex;
@@ -22,7 +26,7 @@
     stroke-width: 7;
     width: 60px;
     height: 60px;
-    /* animation: rotate360 3s linear  infinite ; */
+    transition: transform 0.3s ease-out;
 }
 @keyframes rotate360 {
     from {
@@ -63,9 +67,14 @@
 
 .btn_li{
 list-style: none;
+transition: 1s ;
+}
+.invisible{
+    visibility: hidden;
 }
 .resumeBTN{
     all: unset;
+    cursor: pointer;
     width: fit-content;
     height: 40px;
     box-sizing: border-box;

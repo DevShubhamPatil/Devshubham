@@ -3,12 +3,39 @@ import { logo } from '../svg'
 import LoadingAnimation from '../LoadingAnimation'
 import { Link } from 'react-router-dom'
 import {fileDownload } from '../svg'
+import { useEffect, useState } from 'react'
+
 
 const Navbar = () => {
+    const [scrolled, setScrolled] = useState(false);
+    const [navResumeVisible, setNavResumeVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 10) {
+                setScrolled(true);
+                if(window.scrollY > window.innerHeight){
+                    setNavResumeVisible(true)
+                }else{
+                    setNavResumeVisible(false)
+                }
+            } else {
+                
+                setScrolled(false);
+            }
+            console.log("Hiii "+ window.scrollY)
+            document.getElementById("logo").style.transform = `rotate(${window.scrollY/2}deg)`
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <>
-            <nav className="navbar">
+            <nav id="nav" className={`navbar ${scrolled? "shadow" : ""}`}>
                 <div className='logocontainer'>
                     <div className="Slogo">s</div>
                     {logo}
@@ -19,7 +46,7 @@ const Navbar = () => {
                         <li className='nav_link'> <Link>about</Link> </li>
                         <li className='nav_link'> <Link>about</Link> </li>
                         <li className='nav_link'> <Link>about</Link> </li>
-                        <li className='nav_link btn_li'> <button className='resumeBTN'>
+                        <li className={`nav_link btn_li ${navResumeVisible? "" : "invisible"}`}> <button className='resumeBTN'>
                             <div className="navbtnsvg" id="resume">
                                 {fileDownload}
                             </div>
