@@ -1,8 +1,13 @@
-.navbar {
+.navbar{
     background-color: rgb(178, 221, 235);
     display: flex;
+    /* border: 2px red solid; */
+    justify-content: space-between;
     height: 70px;
-    /* box-shadow: 0px 0px 15px; */
+    overflow: visible;
+    /* box-shadow: 0px 0px 15px 0px; */
+    position: sticky;
+    top:0px;
 }
 
 .logocontainer{
@@ -17,7 +22,7 @@
     stroke-width: 7;
     width: 60px;
     height: 60px;
-    animation: rotate360 3s linear  infinite ;
+    /* animation: rotate360 3s linear  infinite ; */
 }
 @keyframes rotate360 {
     from {
@@ -35,4 +40,56 @@
     font-size: 50px;
     font-weight: 500;
     color: rgb(7, 7, 20);
+}
+.navlinks_container
+{
+    /* border: 2px red solid; */
+    margin-right: 1.5vw;
+}
+.navlinks{
+    height: 100%;
+    /* background-color: beige; */
+    display: flex;
+    /* list-style: none; */
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin: 0;
+    gap: 30px;
+    align-items: end;
+}
+.nav_link Link{
+    text-decoration: none;
+}
+
+.btn_li{
+list-style: none;
+}
+.resumeBTN{
+    all: unset;
+    width: fit-content;
+    height: 40px;
+    box-sizing: border-box;
+    border: black 2px solid;
+    /* margin: 20px 10px 5px 10px; */
+    padding: 0px 15px 0px 0px;
+    border-radius: 10px;
+    display: flex;
+}
+.navbtnsvg{
+    display: flex;
+    margin: 0px 0px 0px 10px;
+    padding: 5px 0;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    stroke: black;
+    fill: none;
+}
+.navbtntext{
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: 1.2rem;
+
 }
