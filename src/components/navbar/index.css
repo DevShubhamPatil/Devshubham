@@ -1,20 +1,20 @@
-.navbar{
+.navbar {
     background-color: rgb(178, 221, 235);
     display: flex;
-    /* border: 2px red solid; */
-    opacity: 1;
     justify-content: space-between;
     height: 70px;
     overflow: visible;
     position: sticky;
-    top:0px;
-    /* transition: 0.2s ease-in; */
+    top: 0px;
+    transition: 0.2s ease-in;
     z-index: 99;
 }
-.shadow{
+
+.shadow {
     box-shadow: 0px 0px 15px 0px;
 }
-.logocontainer{
+
+.logocontainer {
     position: relative;
     display: flex;
     align-items: center;
@@ -28,14 +28,16 @@
     height: 60px;
     transition: transform 0.3s ease-out;
 }
+
 @keyframes rotate360 {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
 
 .Slogo {
     position: absolute;
@@ -45,12 +47,13 @@
     font-weight: 500;
     color: rgb(7, 7, 20);
 }
-.navlinks_container
-{
+
+.navlinks_container {
     /* border: 2px red solid; */
     margin-right: 1.5vw;
 }
-.navlinks{
+
+.navlinks {
     height: 100%;
     /* background-color: beige; */
     display: flex;
@@ -61,18 +64,22 @@
     gap: 30px;
     align-items: end;
 }
-.nav_link Link{
+
+.nav_link Link {
     text-decoration: none;
 }
 
-.btn_li{
-list-style: none;
-transition: 1s ;
+.btn_li {
+    list-style: none;
+    transition: 0.2s;
 }
-.invisible{
+
+.invisible {
     visibility: hidden;
+    opacity: 0;
 }
-.resumeBTN{
+
+.resumeBTN {
     all: unset;
     cursor: pointer;
     width: fit-content;
@@ -84,7 +91,8 @@ transition: 1s ;
     border-radius: 10px;
     display: flex;
 }
-.navbtnsvg{
+
+.navbtnsvg {
     display: flex;
     margin: 0px 0px 0px 10px;
     padding: 5px 0;
@@ -94,7 +102,8 @@ transition: 1s ;
     stroke: black;
     fill: none;
 }
-.navbtntext{
+
+.navbtntext {
     font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     display: flex;
     height: 100%;

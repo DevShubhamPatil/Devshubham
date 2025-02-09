@@ -12,19 +12,11 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 10) {
-                setScrolled(true);
-                if(window.scrollY > window.innerHeight){
-                    setNavResumeVisible(true)
-                }else{
-                    setNavResumeVisible(false)
-                }
-            } else {
-                
-                setScrolled(false);
-            }
-            console.log("Hiii "+ window.scrollY)
+            requestAnimationFrame(() =>{
+            setScrolled(window.scrollY > 10);
+            setNavResumeVisible(window.scrollY > window.innerHeight);
             document.getElementById("logo").style.transform = `rotate(${window.scrollY/2}deg)`
+        });
         };
 
         window.addEventListener("scroll", handleScroll);

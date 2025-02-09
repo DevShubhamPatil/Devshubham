@@ -35,7 +35,7 @@ const Landing = () => {
         let yleft = y;
         let yright = y;
 
-
+        if(mousey < window.outerHeight){
         if (mousey < avatary) {
             let eyeleveldiff = ((avatary - mousey) * 2.5) / avatary
             if (mousex > avatarx) {
@@ -59,7 +59,7 @@ const Landing = () => {
         eyeLeft.style.transform = `translate(${avatarx - MovementRange / 2 + x}px, ${avatary - MovementRange / 2 + yleft}px)`
         eyeRight.style.transform = `translate(${avatarx - MovementRange / 2 + x}px, ${avatary - MovementRange / 2 + yright}px)`
 
-
+    }
     })
     return (
         <>
