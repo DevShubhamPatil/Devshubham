@@ -16,7 +16,7 @@ function App() {
   // }, []);
   return (
     <>
-    {/* <LoadingAnimation/> */}
+    <LoadingAnimation/>
     {/* {showApp &&<div className="App"> */}
     <div className="App">
       <BrowserRouter>
