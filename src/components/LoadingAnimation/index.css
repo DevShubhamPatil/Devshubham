@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     animation: vanish 0.2s cubic-bezier(0.77, 0, 0.18, 1) 3.3s forwards;
-    z-index: 1;
+    z-index: 5;
 }
 @keyframes vanish {
     0% {

@@ -63,7 +63,6 @@ const Landing = () => {
     })
     return (
         <>
-            {/* <LoadingAnimation /> */}
             <div className="container">
                 <div className="headline">
                     <p className="line1">Hi, my name is</p>

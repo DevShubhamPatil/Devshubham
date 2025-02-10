@@ -15,7 +15,7 @@ const Navbar = () => {
             requestAnimationFrame(() =>{
             setScrolled(window.scrollY > 10);
             setNavResumeVisible(window.scrollY > window.innerHeight);
-            document.getElementById("logo").style.transform = `rotate(${window.scrollY/2}deg)`
+            document.getElementById("logo").style.transform = `rotate(${window.scrollY/3}deg)`
         });
         };
 
