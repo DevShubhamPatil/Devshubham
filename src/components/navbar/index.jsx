@@ -1,7 +1,7 @@
 import './index.css'
 import { logo } from '../svg'
 import LoadingAnimation from '../LoadingAnimation'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-scroll'
 import { fileDownload } from '../svg'
 import { useEffect, useState } from 'react'
 
@@ -14,7 +14,7 @@ const Navbar = () => {
         const handleScroll = () => {
             requestAnimationFrame(() => {
                 setScrolled(window.scrollY > 10);
-                setNavResumeVisible(window.scrollY > window.innerHeight);
+                setNavResumeVisible(window.scrollY > window.innerHeight/2);
                 document.getElementById("logo").style.transform = `rotate(${window.scrollY / 3}deg)`
             });
         };
@@ -34,10 +34,10 @@ const Navbar = () => {
                 </div>
                 <div className="navlinks_container">
                     <ol className='navlinks'>
-                        <li className='nav_link'> <Link>about</Link> </li>
-                        <li className='nav_link'> <Link>about</Link> </li>
-                        <li className='nav_link'> <Link>about</Link> </li>
-                        <li className='nav_link'> <Link>about</Link> </li>
+                        <li className='nav_link'> <Link to="landing" smooth={true} duration={500}>about</Link> </li>
+                        <li className='nav_link'> <Link to="contactme" smooth={true} duration={500}>about</Link> </li>
+                        <li className='nav_link'> <Link to="about" smooth={true} duration={500}>about</Link> </li>
+                        <li className='nav_link'> <Link to="about" smooth={true} duration={500}>about</Link> </li>
                         <li className={`nav_link btn_li ${navResumeVisible ? "" : "invisible"}`}> <button className='resumeBTN'>
                             <div className="navbtnsvg" id="resume">
                                 {fileDownload}
