@@ -2,8 +2,6 @@ import React from "react";
 import './index.css'
 
 const LoadingAnimation = ()=>{
-
-
     return (
         <div className="box">
         <svg className="svgclass">

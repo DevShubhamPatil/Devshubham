@@ -65,6 +65,7 @@
     box-sizing: border-box;
     margin: 0;
     gap: 50px;
+    /* gap: 3vw; */
     align-items: center;
     list-style: decimal-leading-zero;
     color: var(--normal_txt-color);
@@ -95,11 +96,12 @@ a {
     padding: 0px 15px 0px 0px;
     border-radius: 10px;
     display: flex;
+    margin-left: -20px;
 }
 
 .navbtnsvg {
     display: flex;
-    margin: 0px 5px 0px 10px;
+    margin: 0px 5px 0px 5px;
     padding: 5px 0;
     width: 25px;
     height: 25px;
@@ -114,5 +116,13 @@ a {
     height: 100%;
     align-items: center;
     font-size: 1.2rem;
+}
 
+@media (max-width:826px) {
+
+    li:not(:has(button)){
+        display: none;
+
+    }
+    
 }

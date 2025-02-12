@@ -15,7 +15,7 @@ const Navbar = () => {
             requestAnimationFrame(() => {
                 setScrolled(window.scrollY > 10);
                 setNavResumeVisible(window.scrollY > window.innerHeight/2);
-                document.getElementById("logo").style.transform = `rotate(${window.scrollY / 3}deg)`
+                document.getElementById("logo").style.transform = `rotate(${window.scrollY /4}deg)`
             });
         };
 
@@ -34,8 +34,8 @@ const Navbar = () => {
                 </div>
                 <div className="navlinks_container">
                     <ol className='navlinks'>
-                        <li className='nav_link'> <Link to="landing" smooth={true} duration={500}>about</Link> </li>
-                        <li className='nav_link'> <Link to="contactme" smooth={true} duration={500}>about</Link> </li>
+                        <li className='nav_link'> <Link to="home" smooth={true} duration={500}>about</Link> </li>
+                        <li className='nav_link'> <Link to="contactme" smooth={true} duration={500}>ContactMe</Link> </li>
                         <li className='nav_link'> <Link to="about" smooth={true} duration={500}>about</Link> </li>
                         <li className='nav_link'> <Link to="about" smooth={true} duration={500}>about</Link> </li>
                         <li className={`nav_link btn_li ${navResumeVisible ? "" : "invisible"}`}> <button className='resumeBTN'>
