@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgb(178, 221, 235);
+    background-color: var(--background-color);
     display: flex;
     justify-content: space-between;
     height: 100px;
@@ -11,7 +11,7 @@
 }
 
 .shadow {
-    box-shadow: 0px 0px 15px 0px;
+    box-shadow: var(--shadow-color) 0px 0px 15px 1px;
 }
 
 .logocontainer {
@@ -26,6 +26,7 @@
     stroke-width: 7;
     width: 60px;
     height: 60px;
+    stroke: var(--text_color);
     transition: transform 0.1s ease-out;
 }
 
@@ -49,7 +50,7 @@
     justify-content: center;
     font-size: 50px;
     font-weight: 500;
-    color: rgb(7, 7, 20);
+    color: var(--text_color);
     padding-bottom: 10px;
 }
 
@@ -66,6 +67,7 @@
     gap: 50px;
     align-items: center;
     list-style: decimal-leading-zero;
+    color: var(--normal_txt-color);
 }
 
 a {
@@ -89,7 +91,7 @@ a {
     width: fit-content;
     height: 40px;
     box-sizing: border-box;
-    border: black 2px solid;
+    border: var(--subheading-color) 2px solid;
     padding: 0px 15px 0px 0px;
     border-radius: 10px;
     display: flex;
@@ -97,12 +99,12 @@ a {
 
 .navbtnsvg {
     display: flex;
-    margin: 0px 0px 0px 10px;
+    margin: 0px 5px 0px 10px;
     padding: 5px 0;
     width: 25px;
     height: 25px;
     padding: 5px;
-    stroke: black;
+    stroke: var(--normal_txt-color);
     fill: none;
 }
 

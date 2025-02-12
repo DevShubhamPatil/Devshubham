@@ -1,0 +1,97 @@
+
+.contact_container{
+    /* background-color: rgb(21,19,18); */
+    background-color: var(--background-color);
+    color: var(--text_color);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 100px);
+    align-items: center;
+    justify-content: center;
+}
+.heading_cont{
+    width: 700px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+.heading{
+    font-family: Poppins, "Poppins Placeholder", sans-serif;
+    font-size: 90px;
+    line-height: 90px;
+    font-weight: 700;
+
+}
+.subheading{
+    font-family: Poppins, "Poppins Placeholder", sans-serif;
+    font-size: 90px;
+    line-height: 90px;
+    font-weight: 700;
+    color: var(--subheading-color);
+}
+
+form{
+    font-family: "Poppins", "Poppins Placeholder", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 10px;
+    /* background-color: cadetblue; */
+    width: 700px;
+    height: max-content;
+    
+}
+.group{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.half {
+    flex-basis: 50%;
+}
+.full{
+    flex-basis: 100%;
+}
+.frmbtncontainer{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+form input,textarea{
+    all:unset;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: rgb(53,51,52);
+}
+form textarea{
+    height: 100px;
+    resize: vertical;
+}
+form input:focus, textarea:focus{
+    border: 2px rgb(244,108,57) solid;
+}
+form label{
+    font-size: 12px;
+    margin: 5px 0 5px 0;
+    font-weight: 600;
+    color: gray;
+}
+form button{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: rgb(244,108,57);
+    color: white;
+    font-family: Poppins, "Poppins Placeholder", sans-serif;
+    font-size: 15px;
+}
