@@ -1,10 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root{
+    /* --background-color : black; */
     --background-color : rgb(21,19,18);
     --text_color: whitesmoke;
     --subheading-color: rgb(53,51,52);
     --normal_txt-color: lightgray;
-    --shadow-color:black;
-    /* --shadow-color:rgb(80, 79, 79); */
+    --shadow-color:whitesmoke;
+    /* --highlight-color:rgb(243, 201, 87); */
+    /* --highlight-color:rgb(28, 224, 215); */
+    /* --highlight-color:rgb(243, 201, 87); */
+    --highlight-color:rgb(100, 255, 218);
+    /* --highlight-color:rgb(244, 108, 57); */
+    /* --highlight-color:rgb(168, 124, 124); */
+
+    /* --shadow-color:rgb(128, 99, 99); */
+}
+
+.bg{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: hsl(230 , 90%, 3.5%) ;
+    background-image:radial-gradient(#154632 .5px, transparent 1.5px);
+    background-size: 1.5rem 1.5rem;
+    mask-image: radial-gradient(600px, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 100%);
+    z-index: -1;
 }

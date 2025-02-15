@@ -41,3 +41,10 @@ export const logo =
              strokeLinecap="round">
         </polygon>
     </svg>
+
+export const hamb =
+<svg className="hamb" viewBox="0 0 130 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line id="Line 1" x1="29.9945" y1="26.5" x2="100.002" y2="26.5"  stroke-width="7"/>
+<line id="Line 2" x1="29.9909" y1="46.5214" x2="99.9981" y2="46.5214" stroke-width="7"/>
+<line id="Line 3" x1="29.9945" y1="66.5" x2="100.002" y2="66.5"  stroke-width="7"/>
+</svg>

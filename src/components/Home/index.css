@@ -4,13 +4,9 @@
     width: 100%;
     height: calc(100vh - 100px);
     display: flex;
-    /* background-color: rgb(178, 221, 235); */
-    background-color: var(--background-color);
     color:var(--text_color);
-    /* background-color: rgb(43, 115, 160); */
     justify-content: center;
     align-items: center;
-    /* overflow-y: scroll; */
 }::-webkit-scrollbar {
     display: none;
 }
@@ -20,7 +16,6 @@
     height: 450px;
     position: relative;
     transform: scale(1);
-    /* mix-blend-mode: darken; */
     filter: invert();
     margin-left: 10vw;
 }
@@ -39,7 +34,7 @@
     left: 118px;
     top: 97px;
     transform: rotate(8deg);
-    mix-blend-mode: darken;
+    mix-blend-mode: darken; 
     transition: transform 0.3s ease-out;
 }
 
@@ -83,10 +78,12 @@
 /* ---------------------------------------------------------- Heading -------------------------------------------------------------- */
 
 .headline {
-    min-width: 340px;
+display: flex;
+flex-direction: column;
     margin-right: 1vw;
     padding: 20px;
     box-sizing: border-box;
+
 }
 
 .line1 {
@@ -95,7 +92,7 @@
     font-size: 1.2rem;
     line-height: 1px;
     padding-left: 7px;
-    color:var(--text_color);
+    color:var(--highlight-color);
 }
 
 .name {
@@ -158,25 +155,23 @@
 .MyLinks {
     margin-top: 10px;
     height: 40px;
-    /* border: black 1px solid; */
+    width: 350px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+   align-self: center;
 }
 
 .SVGs {
-    /* border: black 1px solid; */
     width: 25px;
     height: 25px;
-    padding: 5px;
-    margin: 5px 10px ;
-    /* stroke: black; */
+    padding: 5px 0;
     stroke:var(--text_color);
     fill: none;
 }
 
 .SVGs:hover:not(#resume) {
     transform: scale(1.2);
-    stroke: rgb(71, 61, 161);
+    stroke: var(--highlight-color);
 }
 
 @media (max-width:1176px) {
@@ -197,6 +192,7 @@
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+        
     }
 
     .bodycontainer {
@@ -204,19 +200,26 @@
     }
 
     .name {
-        font-size: 30px;
-        line-height: 35px;
+        font-size: min(11vw, 70px);
+        font-weight: 500;
+        line-height: 12vw;
         padding-left: 3px;
         letter-spacing: -1px;
         word-spacing: 5px;
-
+        
     }
 
     .whatIdo {
-        font-size: 23px;
-        line-height: 50px;
+        font-size: min(7vw, 50px);
+        line-height: 8vw;
         letter-spacing: -1px;
         padding-left: 3px;
 
     }
+    .btntxt {
+        font-size: 4.5vw;
+    }
+.MyLinks {
+width: 80%;
+}
 }

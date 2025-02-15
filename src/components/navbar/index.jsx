@@ -1,5 +1,5 @@
 import './index.css'
-import { logo } from '../svg'
+import { hamb, logo } from '../svg'
 import LoadingAnimation from '../LoadingAnimation'
 import { Link } from 'react-scroll'
 import { fileDownload } from '../svg'
@@ -14,7 +14,7 @@ const Navbar = () => {
         const handleScroll = () => {
             requestAnimationFrame(() => {
                 setScrolled(window.scrollY > 10);
-                setNavResumeVisible(window.scrollY > window.innerHeight/2);
+                setNavResumeVisible(window.scrollY > (window.innerWidth>826 ? window.innerHeight/2 : window.innerHeight *0.75));
                 document.getElementById("logo").style.transform = `rotate(${window.scrollY /4}deg)`
             });
         };
@@ -46,6 +46,12 @@ const Navbar = () => {
                                 Resume
                             </div>
                         </button> </li>
+                        <li className='nav_link btn_li'>
+                            <div className="hamBContainer">
+                                {hamb}
+                            </div>
+                            </li>
+
                     </ol>
                 </div>
             </nav>
