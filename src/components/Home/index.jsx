@@ -80,32 +80,32 @@ const Landing = () => {
                     </div>
                     <div className="MyLinks">
                         <div className="SVGs">
-                            <a href="https://www.linkedin.com/in/shubham-patil-b4551a202" target="_blank" >
+                            <a href="https://www.linkedin.com/in/shubham-patil-b4551a202" target="_blank" rel="noopener" >
                                 {LinkdInSVG}
                             </a>
                         </div>
                         <div className="SVGs">
-                            <a href="https://github.com/DevShubhamPatil" target="_blank" >
+                            <a href="https://github.com/DevShubhamPatil" target="_blank" rel="noopener" >
                                 {GitHubSVG}
                             </a>
                         </div>
                         <div className="SVGs">
-                            <a href="https://www.instagram.com/shubham.ig" target="_blank" >
+                            <a href="https://www.instagram.com/shubham.ig" target="_blank" rel="noopener" >
                                 {InstaSVG}
                             </a>
                         </div>
                         <div className="SVGs">
-                            <a href="https://x.com/DevShubhamPatil" target="_blank" >
+                            <a href="https://x.com/DevShubhamPatil" target="_blank" rel="noopener" >
                                 {xsvg}
                             </a>
                         </div>
                         <div className="SVGs">
-                            <a href="https://wa.me/+918378825977" target="_blank" >
+                            <a href="https://wa.me/+918378825977" target="_blank" rel="noopener" >
                                 {WhatsAppSVG}
                             </a>
                         </div>
                         <div className="SVGs">
-                            <a href="mailto: to.shubhpatil@gmail.com" target="_blank" >
+                            <a href="mailto: to.shubhpatil@gmail.com" target="_blank" rel="noopener" >
                                 {eMailSVG}
                             </a>
                         </div>
