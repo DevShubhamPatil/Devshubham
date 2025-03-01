@@ -12,69 +12,21 @@
 }
 
 .bodycontainer {
-    width: 300px;
-    height: 450px;
+    width: 290px;
+    height: 230px;
     position: relative;
     transform: scale(1);
-    filter: invert();
-    margin-left: 10vw;
+    margin-left: 5vw;
+    border: 1px gray solid;
+    border-radius: 10px;
 }
 
 .face {
-    width: 200px;
-    height: 230px;
-    mix-blend-mode: darken;
-    transition: transform 0.3s ease-out;
+width :300px;
+position: absolute;
+left: 5px;
+bottom: 0px;
 }
-
-.eyebroLeft {
-    width: 35px;
-    height: 7px;
-    position: absolute;
-    left: 118px;
-    top: 97px;
-    transform: rotate(8deg);
-    mix-blend-mode: darken; 
-    transition: transform 0.3s ease-out;
-}
-
-.eyebroRight {
-    width: 35px;
-    height: 7px;
-    position: absolute;
-    left: 45px;
-    top: 97px;
-    transform: rotate(-8deg);
-    mix-blend-mode: darken;
-    transition: transform 0.3s ease-out;
-}
-
-.eyeLeft {
-    width: 15px;
-    position: absolute;
-    mix-blend-mode: darken;
-    left: 60px;
-    top: 122px;
-    transition: transform 0.3s ease-out;
-}
-
-.eyeRight {
-    width: 15px;
-    position: absolute;
-    left: 127px;
-    top: 122px;
-    mix-blend-mode: darken;
-    transition: transform 0.3s ease-out;
-}
-
-.body {
-    width: 325px;
-    position: absolute;
-    left: -60px;
-    top: 216px;
-    mix-blend-mode: darken;
-}
-
 /* ---------------------------------------------------------- Heading -------------------------------------------------------------- */
 
 .headline {

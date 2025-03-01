@@ -28,8 +28,8 @@ useEffect(() => {
       <div className='bg' id='bg'></div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={isLanding? <Landing/>:<LoadingAnimation />}></Route>
-          {/* <Route path='/' element={<Landing/>}></Route> */}
+          {/* <Route path='/' element={isLanding? <Landing/>:<LoadingAnimation />}></Route> */}
+          <Route path='/' element={<Landing/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
