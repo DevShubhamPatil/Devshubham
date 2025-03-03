@@ -2,7 +2,8 @@
 
 .container {
     width: 100%;
-    min-height: calc(100vh - 100px);
+    height: calc(100vh - 100px);
+    max-height: 1000px;
     display: flex;
     color: var(--text_color);
     justify-content: center;
@@ -19,7 +20,9 @@
     position: relative;
     transform: scale(1);
     margin-left: 5vw;
-    border: 1px gray solid;
+    border: 2px solid;
+    border-image-source: conic-gradient( from 20deg, #f9ce34, #ee2a7b, #6228d7,#f9ce34);
+    border-image-slice: 1;
     border-radius: 10px;
 }
 
@@ -63,12 +66,28 @@
 .whatIdo {
     font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     color: var(--subheading-color);
+    position:relative;
     font-weight: 700;
     font-size: 60px;
     line-height: 70px;
     letter-spacing: -2px;
     padding-left: 7px;
+
 }
+/* .whatIdo:hover:after{
+    content: 'Full Stack Developer | DevOps Engineer | to be Systems Architect';
+    color: var(--highlight-color);
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    background: radial-gradient(ellipse ,black, black   , transparent);
+    left: 0px;
+    font-size: 1.2rem;
+    letter-spacing: normalz;
+    font-weight: 100;
+    transition: 2s ;
+    border:2px red solid; 
+} */
 
 .actioncall {
     display: flex;
@@ -147,11 +166,10 @@
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-
     }
 
     .bodycontainer {
-        margin-top: 60px;
+        margin-top: 80px;
         transform: scale(0.7);
     }
 
@@ -179,6 +197,5 @@
 
     .MyLinks {
         width: 80%;
-        margin-bottom: 100px;
     }
 }

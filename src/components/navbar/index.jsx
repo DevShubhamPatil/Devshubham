@@ -14,8 +14,8 @@ const Navbar = () => {
         const handleScroll = () => {
             requestAnimationFrame(() => {
                 setScrolled(window.scrollY > 10);
-                setNavResumeVisible(window.scrollY > (window.innerWidth>826 ? window.innerHeight/2 : window.innerHeight *0.75));
-                document.getElementById("logo").style.transform = `rotate(${window.scrollY /4}deg)`
+                setNavResumeVisible(window.scrollY > (window.innerWidth > 826 ? window.innerHeight / 2 : window.innerHeight * 0.75));
+                document.getElementById("logo").style.transform = `rotate(${window.scrollY / 4}deg)`
             });
         };
 
@@ -38,19 +38,20 @@ const Navbar = () => {
                         <li className='nav_link'> <Link to="Skills" smooth={true} duration={500}>Tech Skills</Link> </li>
                         <li className='nav_link'> <Link to="contactme" smooth={true} duration={500}>ContactMe</Link> </li>
                         <li className='nav_link'> <Link to="about" smooth={true} duration={500}>about</Link> </li>
-                        <li className={`nav_link btn_li ${navResumeVisible ? "" : "invisible"}`}> <button className='resumeBTN'>
-                            <div className="navbtnsvg" id="resume">
-                                {fileDownload}
-                            </div>
-                            <div className="navbtntext">
-                                Resume
-                            </div>
-                        </button> </li>
+                        <li className={`nav_link btn_li ${navResumeVisible ? "" : "invisible"}`}>
+                            <button className='resumeBTN'>
+                                <div className="navbtnsvg" id="resume">
+                                    {fileDownload}
+                                </div>
+                                <div className="navbtntext">
+                                    {window.innerWidth < 826 ? 'CV' : 'Resume'}
+                                </div>
+                            </button> </li>
                         <li className='nav_link btn_li'>
                             <div className="hamBContainer">
                                 {hamb}
                             </div>
-                            </li>
+                        </li>
 
                     </ol>
                 </div>

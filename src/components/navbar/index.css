@@ -1,5 +1,5 @@
 .navbar {
-    background: hsl(210 , 95%, 1%) ;
+    background: hsl(210, 95%, 1%);
     display: flex;
     justify-content: space-between;
     height: 100px;
@@ -12,14 +12,16 @@
 
 .shadow {
     box-shadow: var(--shadow-color) 0px 0px 20px -15px;
-    background:  hsla(204, 100%, 1%, 0.589);
+    background: hsla(204, 100%, 1%, 0.589);
     backdrop-filter: blur(10px);
 }
+
 .logocontainer {
     position: relative;
     display: flex;
     align-items: center;
     margin-left: 1.5vw;
+    transform: scale(1.2);
 }
 
 .logo {
@@ -42,6 +44,7 @@
 }
 
 .Slogo {
+    font: sans-serif;
     position: absolute;
     display: flex;
     box-sizing: border-box;
@@ -49,7 +52,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 500;
     color: var(--text_color);
     padding-bottom: 10px;
@@ -66,12 +69,13 @@
     box-sizing: border-box;
     margin: 0;
     gap: 50px;
-    /* gap: 3vw; */
+
     align-items: center;
     list-style: decimal-leading-zero;
     color: var(--normal_txt-color);
 }
-.nav_link{
+
+.nav_link {
     list-style: none;
     cursor: pointer;
 }
@@ -79,7 +83,6 @@
 a {
     text-decoration: none;
     color: inherit;
-    /* Optional: Ensures it inherits the text color */
 }
 
 .btn_li {
@@ -137,16 +140,49 @@ a {
 
 
 @media (max-width:826px) {
+    .logocontainer {
+        margin: 20px 0px 0px 20px;
+        transform: scale(1.1);
+    }
+
     .hamBContainer {
         display: flex;
     }
-    
-    li:not(:has(button , SVG)) {
+
+    li:not(:has(button, SVG)) {
         display: none;
 
     }
 
-.hamBContainer {
-    display: flex;
-}
+    .hamBContainer {
+        display: flex;
+    }
+
+    .resumeBTN {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: fit-content;
+        box-sizing: border-box;
+        padding: 4px;
+    }
+
+    .navlinks {
+        gap: 1px;
+    }
+
+    .navbtnsvg {
+        margin: 0px;
+        padding: 0;
+        /* border: 2px red solid; */
+    }
+
+    .navbtntext {
+        content: 'cv';
+        font-size: 0.8rem;
+        /* border: 2px red solid; */
+        height: fit-content;
+    }
+
 }

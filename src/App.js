@@ -17,7 +17,7 @@ useEffect(() => {
   const bgDiv = document.getElementById("bg");
 
   const handleMouseMove = (event) => {
-    bgDiv.style.maskImage = `radial-gradient(550px at ${event.clientX}px ${event.clientY}px, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 100%)`;
+    bgDiv.style.maskImage = `radial-gradient(${window.innerWidth < 826 ? '200px': '550px'} at ${event.clientX}px ${event.clientY}px, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 100%)`;
   };
   document.addEventListener("mousemove", handleMouseMove);
   return () => {
@@ -29,7 +29,7 @@ useEffect(() => {
       <div className='bg' id='bg'></div>
       <BrowserRouter>
         <Routes>
-          {/* <Route path='/' element={isLanding? <Landing/>:<LoadingAnimation />}></Route> */}
+          <Route path='/' element={isLanding? <Landing/>:<LoadingAnimation />}></Route>
           {/* <Route path='/' element={<Skills/>}></Route> */}
           <Route path='/' element={<Landing/>}></Route>
           

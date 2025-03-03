@@ -1,10 +1,6 @@
 
 import { Link } from 'react-scroll'
 import './index.css'
-import Head from '../imgs/head3.jpg'
-import EyeBrow from '../imgs/eb.jpg'
-import Eye from '../imgs/eye.jpg'
-import Body from '../imgs/body.jpg'
 import Me from '../imgs/myimg.png'
 
 import { LinkdInSVG, GitHubSVG, InstaSVG, xsvg, WhatsAppSVG, eMailSVG, fileDownload } from '../svg'
@@ -14,7 +10,7 @@ const Landing = () => {
         <>
             <div className="container">
                 <div className="headline">
-                    <p className="line1">Hi, my name is</p>
+                    <p className="line1">Hi, my name is,</p>
                     <div className="name">Shubham Patil.</div>
                     <div className="whatIdo">I build things for the Web.</div>
                     <div className="actioncall">
@@ -64,6 +60,7 @@ const Landing = () => {
                 <div className="bodycontainer" id="avatar">
                     <img id="face" className="face" src={Me} alt="" />
                 </div>
+                
                 </div>
             </div>
 

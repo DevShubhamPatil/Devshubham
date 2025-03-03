@@ -1,68 +1,73 @@
+.skillscontainer {
+    min-height: calc(100vh - 100px);
 
-.skillscontainer{
-    min-height: 100vh;
     color: aliceblue;
-    border: 2px red solid;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
 }
-.skillheading{
+
+.skillheading {
     font-weight: 500;
     font-size: 45px;
     line-height: 150px;
     letter-spacing: -2px;
     word-spacing: 10px;
-    color:var(--text_color);
+    color: var(--text_color);
 }
-.techcontainer{
-    max-width: 70%;
+
+.techcontainer {
+    width: 70%;
+    max-width: 1200px;
     box-sizing: border-box;
     padding: 30px 20px;
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center ;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
 }
-.border{
+
+.border {
     position: relative;
     width: fit-content;
     height: fit-content;
     background-color: black;
     overflow: hidden;
     padding: 3px;
+
 }
 
-.border::before{
+.border::before {
     content: '';
     position: absolute;
-    left:var(--x);
+    left: var(--x);
     top: var(--y);
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 200%;
     height: 200%;
-    background:radial-gradient( var(--highlight-color),transparent, transparent);
+    background: radial-gradient( transparent, transparent,transparent, transparent,transparent);
     opacity: 0;
-    transition: ease ;
+    transition: ease;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.border:hover::before{
-    opacity: 1;    
+
+.border:hover::before {
+    opacity: 1;
 }
 
-.content{
+.content {
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
-    width:150px;
-    height:40px;
+    width: 150px;
+    height: 40px;
     background-color: rgb(3, 5, 24);
     padding: 10px;
     display: flex;
@@ -75,17 +80,42 @@
     border-radius: 15px;
 }
 
-@media screen and (max-width: 826px) {
-.techcontainer{
-    max-width: 100%;
+@keyframes bounce {
+
+    15%{
+        transform: scale(1.2);
+    }
+    50%{
+        transform: scale(0.9);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+    90%{
+        transform: scale(0.96);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 
-    .content{
-    width:120px;
+@media screen and (max-width: 826px) {
+    .techcontainer {
+        min-width: 100%;
+    }
+
+    .skillheading {
+        /* line-height: 50px; */
+        margin: 30px 0 -40px 0;
+    }
+
+    .content {
+        width: 120px;
         padding: 2px;
         font-size: 0.8rem;
     }
-    .content svg{
+
+    .content svg {
         transform: scale(0.8);
     }
 }

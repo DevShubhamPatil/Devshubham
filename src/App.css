@@ -11,6 +11,7 @@
     /* --highlight-color:rgb(28, 224, 215); */
     /* --highlight-color:rgb(243, 201, 87); */
     --highlight-color:rgb(100, 255, 218);
+    /* --highlight-color: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7); */
     /* --highlight-color:rgb(244, 108, 57); */
     /* --highlight-color:rgb(168, 124, 124); */
 
@@ -23,8 +24,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: hsl(230, 86%, 5%) ;
-    background-image:radial-gradient(#154632 .5px, transparent 1.5px);
+    background: hsl(232, 82%, 9%) ;
+    background-image:radial-gradient(#227855 .5px, transparent 1.5px);
     background-size: 1.5rem 1.5rem;
     mask-image: radial-gradient(600px, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 100%);
     z-index: -1;
