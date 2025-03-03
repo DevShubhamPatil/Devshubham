@@ -34,9 +34,9 @@ const Navbar = () => {
                 </div>
                 <div className="navlinks_container">
                     <ol className='navlinks'>
-                        <li className='nav_link'> <Link to="home" smooth={true} duration={500}>about</Link> </li>
+                        <li className='nav_link'> <Link to="home" smooth={true} duration={500}>About</Link> </li>
+                        <li className='nav_link'> <Link to="Skills" smooth={true} duration={500}>Tech Skills</Link> </li>
                         <li className='nav_link'> <Link to="contactme" smooth={true} duration={500}>ContactMe</Link> </li>
-                        <li className='nav_link'> <Link to="about" smooth={true} duration={500}>about</Link> </li>
                         <li className='nav_link'> <Link to="about" smooth={true} duration={500}>about</Link> </li>
                         <li className={`nav_link btn_li ${navResumeVisible ? "" : "invisible"}`}> <button className='resumeBTN'>
                             <div className="navbtnsvg" id="resume">

@@ -60,14 +60,10 @@ const Landing = () => {
                     </div>
 
                 </div>
+                <div className="mainbodycontainer">
                 <div className="bodycontainer" id="avatar">
-                    {/* <img id="face" className="face" src={Head} alt="" />
-                    <img id="eyebroLeft" className="eyebroLeft" src={EyeBrow} alt="" />
-                    <img id="eyebroRight" className="eyebroRight" src={EyeBrow} alt="" />
-                    <img id="eyeLeft" className="eyeLeft" src={Eye} alt="" />
-                    <img id="eyeRight" className="eyeRight" src={Eye} alt="" />
-                    <img id="body" className="body" src={Body} alt="" /> */}
                     <img id="face" className="face" src={Me} alt="" />
+                </div>
                 </div>
             </div>
 

@@ -2,12 +2,14 @@
 
 .container {
     width: 100%;
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
     display: flex;
-    color:var(--text_color);
+    color: var(--text_color);
     justify-content: center;
     align-items: center;
-}::-webkit-scrollbar {
+}
+
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -22,16 +24,17 @@
 }
 
 .face {
-width :300px;
-position: absolute;
-left: 5px;
-bottom: 0px;
+    width: 300px;
+    position: absolute;
+    left: 5px;
+    bottom: 0px;
 }
+
 /* ---------------------------------------------------------- Heading -------------------------------------------------------------- */
 
 .headline {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
     margin-right: 1vw;
     padding: 20px;
     box-sizing: border-box;
@@ -44,7 +47,7 @@ flex-direction: column;
     font-size: 1.2rem;
     line-height: 1px;
     padding-left: 7px;
-    color:var(--highlight-color);
+    color: var(--highlight-color);
 }
 
 .name {
@@ -54,12 +57,12 @@ flex-direction: column;
     line-height: 70px;
     letter-spacing: -2px;
     word-spacing: 10px;
-    color:var(--text_color);
+    color: var(--text_color);
 }
 
 .whatIdo {
     font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-    color:var(--subheading-color);
+    color: var(--subheading-color);
     font-weight: 700;
     font-size: 60px;
     line-height: 70px;
@@ -70,11 +73,11 @@ flex-direction: column;
 .actioncall {
     display: flex;
     justify-content: center;
-    color:var(--text_color);
+    color: var(--text_color);
 }
 
 .actioncall button {
-    
+
     all: unset;
     cursor: pointer;
     width: fit-content;
@@ -92,8 +95,8 @@ flex-direction: column;
     display: flex;
     margin: 5px 5px 0 0;
     padding: 5px 0;
-    
-    
+
+
 }
 
 .btntxt {
@@ -110,14 +113,14 @@ flex-direction: column;
     width: 350px;
     display: flex;
     justify-content: space-between;
-   align-self: center;
+    align-self: center;
 }
 
 .SVGs {
     width: 25px;
     height: 25px;
     padding: 5px 0;
-    stroke:var(--text_color);
+    stroke: var(--text_color);
     fill: none;
 }
 
@@ -144,11 +147,12 @@ flex-direction: column;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        
+
     }
 
     .bodycontainer {
-        transform: scale(0.6);
+        margin-top: 60px;
+        transform: scale(0.7);
     }
 
     .name {
@@ -158,7 +162,7 @@ flex-direction: column;
         padding-left: 3px;
         letter-spacing: -1px;
         word-spacing: 5px;
-        
+
     }
 
     .whatIdo {
@@ -168,10 +172,13 @@ flex-direction: column;
         padding-left: 3px;
 
     }
+
     .btntxt {
         font-size: 4.5vw;
     }
-.MyLinks {
-width: 80%;
-}
+
+    .MyLinks {
+        width: 80%;
+        margin-bottom: 100px;
+    }
 }

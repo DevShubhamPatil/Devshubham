@@ -1,0 +1,91 @@
+
+.skillscontainer{
+    min-height: 100vh;
+    color: aliceblue;
+    border: 2px red solid;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+}
+.skillheading{
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 150px;
+    letter-spacing: -2px;
+    word-spacing: 10px;
+    color:var(--text_color);
+}
+.techcontainer{
+    max-width: 70%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center ;
+    gap: 20px;
+}
+.border{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+    overflow: hidden;
+    padding: 3px;
+}
+
+.border::before{
+    content: '';
+    position: absolute;
+    left:var(--x);
+    top: var(--y);
+    transform: translate(-50%,-50%);
+    width: 200%;
+    height: 200%;
+    background:radial-gradient( var(--highlight-color),transparent, transparent);
+    opacity: 0;
+    transition: ease ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.border:hover::before{
+    opacity: 1;    
+}
+
+.content{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width:150px;
+    height:40px;
+    background-color: rgb(3, 5, 24);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1px;
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 826px) {
+.techcontainer{
+    max-width: 100%;
+}
+
+    .content{
+    width:120px;
+        padding: 2px;
+        font-size: 0.8rem;
+    }
+    .content svg{
+        transform: scale(0.8);
+    }
+}

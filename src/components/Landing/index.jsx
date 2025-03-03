@@ -4,6 +4,7 @@ import LoadingAnimation from '../LoadingAnimation';
 import Navbar from '../navbar'
 import ContactMe from '../Contact_me';
 import {Element } from 'react-scroll';
+import Skills from '../Skills';
 
 
 const Landing = () => {
@@ -12,6 +13,9 @@ const Landing = () => {
             <Navbar />
             <Element name='home'>
                 <Home />
+            </Element>
+            <Element name='Skills'>
+                <Skills />
             </Element>
             <Element name='contactme'>
                 <ContactMe />

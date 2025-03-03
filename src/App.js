@@ -3,6 +3,7 @@ import LoadingAnimation from './components/LoadingAnimation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import { useEffect, useState } from 'react';
+import Skills from './components/Skills';
 
 
 function App() {
@@ -29,7 +30,9 @@ useEffect(() => {
       <BrowserRouter>
         <Routes>
           {/* <Route path='/' element={isLanding? <Landing/>:<LoadingAnimation />}></Route> */}
+          {/* <Route path='/' element={<Skills/>}></Route> */}
           <Route path='/' element={<Landing/>}></Route>
+          
         </Routes>
       </BrowserRouter>
     </div>
