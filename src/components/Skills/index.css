@@ -49,9 +49,9 @@
     transform: translate(-50%, -50%);
     width: 200%;
     height: 200%;
-    background: radial-gradient( transparent, transparent,transparent, transparent,transparent);
+    background: radial-gradient(#f9ce34, #ee2a7b, #6228d7, transparent, transparent,transparent, transparent,transparent);
     opacity: 0;
-    transition: ease;
+
     display: flex;
     justify-content: center;
     align-items: center;
