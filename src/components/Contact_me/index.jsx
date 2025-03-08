@@ -18,13 +18,13 @@ const ContactMe = () => {
 
     const showOptions = () => {
         const selectbox = document.getElementById("selectbox");
-        selectbox.style.top = '178px'
+        selectbox.style.top = window.innerWidth>826? '178px':'255px'
         selectbox.style.opacity = '1'
         selectbox.style.visibility = 'visible'
     }
     const hideOptions = () => {
         const selectbox = document.getElementById("selectbox");
-        selectbox.style.top = '140px'
+        selectbox.style.top =  window.innerWidth>826? '140px':'205px'
         selectbox.style.opacity = '0'
         selectbox.style.visibility = 'hidden'
     }

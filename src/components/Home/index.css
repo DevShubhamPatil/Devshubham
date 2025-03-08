@@ -74,21 +74,6 @@
     padding-left: 7px;
 
 }
-/* .whatIdo:hover:after{
-    content: 'Full Stack Developer | DevOps Engineer | to be Systems Architect';
-    color: var(--highlight-color);
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    background: radial-gradient(ellipse ,black, black   , transparent);
-    left: 0px;
-    font-size: 1.2rem;
-    letter-spacing: normalz;
-    font-weight: 100;
-    transition: 2s ;
-    border:2px red solid; 
-} */
-
 .actioncall {
     display: flex;
     justify-content: center;
@@ -101,7 +86,7 @@
     cursor: pointer;
     width: fit-content;
     height: 50px;
-    border: var(--text_color) 2px solid;
+    border: var(--highlight-color) 2px solid;
     margin: 20px 10px 5px 10px;
     padding: 2px 15px;
     border-radius: 50px / 100%;
@@ -152,7 +137,7 @@
 }
 #copybtn::before{
     font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-    content: 'Now paste in your Terminal and hit Enter';
+    content: 'Now paste in your Terminal and hit Enter <3';
     color: black;
     position: absolute;
     left: 50%;
@@ -184,8 +169,10 @@
 }
 
 @media (max-width:1176px) {
-    #copybtn{
-    display: flex;
+    #copybtn::before{
+        font-size: 0.9rem;
+        width: 130%;
+        top:-150%
     }
     .name {
         font-size: 40px;
@@ -229,11 +216,20 @@
         padding-left: 3px;
 
     }
-
-    .btntxt {
-        font-size: 30px;
+    .actioncall button {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }    
+    .actioncall button .SVGs {
+        margin: 0;
     }
-
+    .btntxt {
+        font-size: clamp(15px ,4vw,20px);
+    }
+    #copybtn::before{
+        top:120%;
+    }
     .MyLinks {
         width: 80%;
     }
