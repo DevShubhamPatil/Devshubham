@@ -1,11 +1,20 @@
-
-import { Link } from 'react-scroll'
 import './index.css'
 import Me from '../imgs/myimg.png'
 
-import { LinkdInSVG, GitHubSVG, InstaSVG, xsvg, WhatsAppSVG, eMailSVG, fileDownload } from '../svg'
+import { LinkdInSVG, GitHubSVG, InstaSVG, xsvg, WhatsAppSVG, eMailSVG, fileDownload, copy } from '../svg'
+import client from 'react-dom/client'
+import { useState } from 'react'
 const Home = (props) => {
-
+    
+const handlecopy =(event)=>{
+    console.log('handlecopy')
+    navigator.clipboard.writeText('npx devshubham')
+    const copybtn = document.getElementById('copybtn')
+    copybtn.style.setProperty('--visibility','visible')
+    setTimeout(()=>{
+    copybtn.style.setProperty('--visibility','hidden')
+    },1500)
+}
     return (
         <>
             <div className="container">
@@ -14,12 +23,18 @@ const Home = (props) => {
                     <div className="name">Shubham Patil.</div>
                     <div className="whatIdo">I build things for the Web.</div>
                     <div className="actioncall">
-                        <button> <Link to="contactme" smooth={true} duration={500}> <div className="btntxt">contact me</div></Link></button>
+                        <button id='copybtn' onClick={handlecopy}>
+                        <div className="btntxt">npx devshubham</div>
+                            <div className="SVGs" id='copy'>
+                                {copy}
+                            </div>
+                        </button>
+                        {/* <button><Link to="contactme" smooth={true} duration={500}> <div className="btntxt">contact me</div></Link></button> */}
                         <button onClick={props.downloadResume}>
+                        <div className="btntxt">Resume</div>
                             <div className="SVGs" id="resume">
                                 {fileDownload}
                             </div>
-                            <div className="btntxt">Resume</div>
                         </button>
                     </div>
                     <div className="MyLinks">

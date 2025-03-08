@@ -44,7 +44,7 @@
 }
 
 .Slogo {
-    font: sans-serif;
+    font: "Times New Roman";
     position: absolute;
     display: flex;
     box-sizing: border-box;
