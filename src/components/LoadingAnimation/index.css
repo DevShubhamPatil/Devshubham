@@ -48,7 +48,7 @@
 .text {
     font-size: 50px;
     font-weight: 500;
-    fill: lightblue;
+    fill: whitesmoke;
     opacity: 0;
     animation: appear 0.7s cubic-bezier(0.77, 0, 0.18, 1) 1.8s forwards;
 

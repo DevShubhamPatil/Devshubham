@@ -220,16 +220,22 @@
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
+        height: 60px;
     }    
     .actioncall button .SVGs {
         margin: 0;
+        padding: 0px;
     }
     .btntxt {
         font-size: clamp(15px ,4vw,20px);
     }
     #copybtn::before{
-        top:-150%;
+        top:-128%;
     }
+    #copybtn::after{
+        top:-45%;
+    }
+
     .MyLinks {
         width: 80%;
     }
