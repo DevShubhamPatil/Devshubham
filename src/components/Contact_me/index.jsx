@@ -15,13 +15,15 @@ const ContactMe = () => {
         option: true,
         message: true
     })
-    const selectbox = document.getElementById("selectbox");
+
     const showOptions = () => {
+        const selectbox = document.getElementById("selectbox");
         selectbox.style.top = '178px'
         selectbox.style.opacity = '1'
         selectbox.style.visibility = 'visible'
     }
     const hideOptions = () => {
+        const selectbox = document.getElementById("selectbox");
         selectbox.style.top = '140px'
         selectbox.style.opacity = '0'
         selectbox.style.visibility = 'hidden'

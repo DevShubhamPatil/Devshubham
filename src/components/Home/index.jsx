@@ -4,8 +4,8 @@ import './index.css'
 import Me from '../imgs/myimg.png'
 
 import { LinkdInSVG, GitHubSVG, InstaSVG, xsvg, WhatsAppSVG, eMailSVG, fileDownload } from '../svg'
-const Landing = () => {
-    
+const Home = (props) => {
+
     return (
         <>
             <div className="container">
@@ -15,7 +15,7 @@ const Landing = () => {
                     <div className="whatIdo">I build things for the Web.</div>
                     <div className="actioncall">
                         <button> <Link to="contactme" smooth={true} duration={500}> <div className="btntxt">contact me</div></Link></button>
-                        <button>
+                        <button onClick={props.downloadResume}>
                             <div className="SVGs" id="resume">
                                 {fileDownload}
                             </div>
@@ -68,4 +68,4 @@ const Landing = () => {
     )
 }
 
-export default Landing
+export default Home

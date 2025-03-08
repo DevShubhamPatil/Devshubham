@@ -6,7 +6,7 @@ import { fileDownload } from '../svg'
 import { useEffect, useState } from 'react'
 
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [scrolled, setScrolled] = useState(false);
     const [navResumeVisible, setNavResumeVisible] = useState(false);
 
@@ -39,7 +39,7 @@ const Navbar = () => {
                         <li className='nav_link'> <Link to="contactme" smooth={true} duration={500}>ContactMe</Link> </li>
                         <li className='nav_link'> <Link to="about" smooth={true} duration={500}>about</Link> </li>
                         <li className={`nav_link btn_li ${navResumeVisible ? "" : "invisible"}`}>
-                            <button className='resumeBTN'>
+                            <button className='resumeBTN' onClick={props.downloadResume}>
                                 <div className="navbtnsvg" id="resume">
                                     {fileDownload}
                                 </div>
