@@ -1,6 +1,5 @@
 import './index.css'
 import { hamb, logo } from '../svg'
-import LoadingAnimation from '../LoadingAnimation'
 import { Link } from 'react-scroll'
 import { fileDownload } from '../svg'
 import { useEffect, useState } from 'react'

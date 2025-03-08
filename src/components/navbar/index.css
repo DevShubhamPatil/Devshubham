@@ -184,5 +184,8 @@ a {
         /* border: 2px red solid; */
         height: fit-content;
     }
+    .Slogo {
+        transform: translateY(2px);
+    }
 
 }
