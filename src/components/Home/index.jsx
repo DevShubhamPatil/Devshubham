@@ -29,7 +29,6 @@ const handlecopy =(event)=>{
                                 {copy}
                             </div>
                         </button>
-                        {/* <button><Link to="contactme" smooth={true} duration={500}> <div className="btntxt">contact me</div></Link></button> */}
                         <button onClick={props.downloadResume}>
                         <div className="btntxt">Resume</div>
                             <div className="SVGs" id="resume">
