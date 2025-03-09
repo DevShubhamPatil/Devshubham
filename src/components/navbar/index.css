@@ -12,7 +12,7 @@
 
 .shadow {
     box-shadow: var(--shadow-color) 0px 0px 20px -15px;
-    background: hsla(204, 100%, 1%, 0.589);
+    background: hsla(204, 100%, 1%, 0.45);
     backdrop-filter: blur(10px);
 }
 

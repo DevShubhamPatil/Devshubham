@@ -83,16 +83,13 @@
 @keyframes bounce {
 
     15%{
-        transform: scale(1.2);
+        transform: scale(0.8);
+    }
+    20%{
+        transform: scale(0.8);
     }
     50%{
-        transform: scale(0.9);
-    }
-    75%{
         transform: scale(1.1);
-    }
-    90%{
-        transform: scale(0.96);
     }
     100%{
         transform: scale(1);
