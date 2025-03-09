@@ -38,7 +38,7 @@ const handlecopy =(event)=>{
                     </div>
                     <div className="MyLinks">
                         <div className="SVGs">
-                            <a href="https://www.linkedin.com/in/shubham-patil-b4551a202" target="_blank" rel="noopener" >
+                            <a href="https://www.linkedin.com/in/devshubh" target="_blank" rel="noopener" >
                                 {LinkdInSVG}
                             </a>
                         </div>

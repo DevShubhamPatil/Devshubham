@@ -69,6 +69,11 @@ const ContactMe = () => {
     }
 
     const handleSubmit = () => {
+        //  animation-----------------------------------------
+        const btnname = document.getElementById('btnname')
+        btnname.style.setProperty('--submitanimation', 'submit 2.5s')
+        setTimeout(()=>btnname.style.setProperty('--submitanimation', 'none'),3000)
+        //  animation-----------------------------------------
         if (formerr.name) {
             document.getElementById('name').style.border = '2px red solid'
             if (formerr.email) {
@@ -126,7 +131,7 @@ const ContactMe = () => {
                         <textarea onChange={handleChange} id="message" placeholder="What brings you here ?"></textarea>
                     </div>
                     <div className="frmbtncontainer full">
-                        <button type='submit' onClick={handleSubmit}>Submit</button>
+                        <button type='submit' onClick={handleSubmit}><div className="btnnamecontainer"><div className="btnname" id='btnname'></div></div></button>
                     </div>
                 </form>
             </div>
