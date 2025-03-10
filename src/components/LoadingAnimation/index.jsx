@@ -7,7 +7,7 @@ const LoadingAnimation = ()=>{
         <svg className="svgclass">
             <text x="87" y="115" className="text">S
             </text>
-            <polygon points="100,50 60,75 60,125 100,150 140,125 140,75 100,50" fill="none" stroke="lightblue"
+            <polygon points="100,50 60,75 60,125 100,150 140,125 140,75 100,50" fill="none" 
                 strokeWidth="5" strokeDasharray="290" strokeDashoffset="290" strokeLinecap="round">
                 <animate 
                 attributeName="stroke-dashoffset" 

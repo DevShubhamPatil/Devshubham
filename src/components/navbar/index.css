@@ -69,15 +69,28 @@
     box-sizing: border-box;
     margin: 0;
     gap: 50px;
-
     align-items: center;
     list-style: decimal-leading-zero;
     color: var(--normal_txt-color);
+
 }
+
 
 .nav_link {
     list-style: none;
     cursor: pointer;
+}
+
+.active{
+    height: 36px;
+    width: var(--length);
+    background-color: var(--highlight-color);
+    position: absolute;
+    margin-left: -10px;
+    z-index: -1;
+    transition: 0.3s ease-out;
+    border-radius: 18px;
+    left: var(--x);
 }
 
 a {
@@ -151,8 +164,10 @@ a {
 
     li:not(:has(button, SVG)) {
         display: none;
-
     }
+.active{
+    display: none;
+}
 
     .hamBContainer {
         display: flex;

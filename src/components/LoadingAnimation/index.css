@@ -32,6 +32,9 @@
     width: 200px;
     animation: shrink 0.3s cubic-bezier(0.77, 0, 0.18, 1) 3s forwards;
 }
+polygon{
+    stroke: var(--highlight-color);
+}
 
 @keyframes shrink {
     0% {

@@ -2,8 +2,8 @@
 
 .container {
     width: 100%;
-    height: calc(100vh - 100px);
-    max-height: 1000px;
+    height: calc(100vh);
+    /* max-height: 1000px; */
     display: flex;
     color: var(--text_color);
     justify-content: center;
