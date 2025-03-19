@@ -181,10 +181,10 @@ form button {
     0%{
         transform: translateY(0%);
     }
-    20%{
+    5%{
         transform: translateY(-100%);
     }
-    80%{
+    95%{
         transform: translateY(-100%);
     }
     100%{

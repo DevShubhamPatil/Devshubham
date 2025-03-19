@@ -74,7 +74,7 @@ const ContactMe = () => {
             }
             return
         }
-    
+
         if (id == 'message') {
             if (value.length < 10) {
                 setFormerr((prevState => ({
@@ -91,73 +91,72 @@ const ContactMe = () => {
         }
     }
 
-        const handleSubmit = () => {
+    const handleSubmit = () => {
+        if (formerr.name || formerr.email || formerr.message || formerr.EnquiryType) {
+            if (formerr.name)
+                document.getElementById('name').style.border = '2px red solid'
+            if (formerr.email)
+                document.getElementById('email').style.border = '2px red solid'
+            if (formerr.message)
+                document.getElementById('message').style.border = '2px red solid'
+            if (formerr.EnquiryType)
+                document.getElementById('EnquiryType').style.border = '2px red solid'
+            return
+        } else {
+            console.log(formData)
             //  animation-----------------------------------------
             const btnname = document.getElementById('btnname')
-            btnname.style.setProperty('--submitanimation', 'submit 2.5s')
-            setTimeout(() => btnname.style.setProperty('--submitanimation', 'none'), 3000)
+            btnname.style.setProperty('--submitanimation', 'submit 5s')
+            setTimeout(() => btnname.style.setProperty('--submitanimation', 'none'), 5000)
             //  animation-----------------------------------------
-            if (formerr.name || formerr.email || formerr.message || formerr.EnquiryType) {
-                if (formerr.name)
-                    document.getElementById('name').style.border = '2px red solid'
-                if (formerr.email)
-                    document.getElementById('email').style.border = '2px red solid'
-                if (formerr.message)
-                    document.getElementById('message').style.border = '2px red solid'
-                if (formerr.EnquiryType)
-                    document.getElementById('EnquiryType').style.border = '2px red solid'
-                console.log("return")
-                return
-            } else {
-                console.log(formData)
-            }
         }
-
-        const handleChange = (e) => {
-            console.log("in here")
-            const { id, value } = e.target
-            validate(id, value)
-            setFormData(prevState => ({
-                ...prevState,
-                [id]: value
-            }))
-        }
-        return (
-            <div className="contact_container">
-                <div className="heading_cont">
-                    <div className="heading">LET'S WORK</div>
-                    <div className="subheading">TOGETHER</div>
-                </div>
-                <div className="form_cont">
-                    <form onSubmit={(e) => e.preventDefault()}>
-                        <div className="group half">
-                            <label htmlFor="name" id='nameL'>Name</label>
-                            <input onChange={handleChange} type="text" id='name' placeholder='Your Name' />
-                        </div>
-                        <div className="group half">
-                            <label htmlFor="email" id='emailL'>Email</label>
-                            <input onChange={handleChange} type="email" id='email' placeholder='your@email.com' />
-                        </div>
-                        <div className="group full">
-                            <label htmlFor="EnquiryType" >Enquiry Type</label>
-                            <input type="" onFocus={(e) => showOptions(e)} onBlur={(e) => { hideOptions(e) }} id='EnquiryType' placeholder='-- Select --' value={formData.EnquiryType} readOnly />
-                            <div className="selectbox" id='selectbox' >
-                                <div className="options" value='Job Oportunity' onClick={(e) => handleOptionClick(e)}>Job Oportunity</div>
-                                <div className="options" value='Freelance Project' onClick={(e) => handleOptionClick(e)}>Freelance Project</div>
-                                <div className="options" value='Collaboration' onClick={(e) => handleOptionClick(e)}>Collaboration</div>
-                                <div className="options" value='Other' onClick={(e) => handleOptionClick(e)}>Other</div>
-                            </div>
-                        </div>
-                        <div className="group full">
-                            <label htmlFor="message">Message</label>
-                            <textarea onChange={handleChange} id="message" placeholder="What brings you here ?"></textarea>
-                        </div>
-                        <div className="frmbtncontainer full">
-                            <button type='submit' onClick={handleSubmit}><div className="btnnamecontainer"><div className="btnname" id='btnname'></div></div></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        )
     }
-    export default ContactMe
+
+    const handleChange = (e) => {
+        console.log("in here")
+        const { id, value } = e.target
+        validate(id, value)
+        setFormData(prevState => ({
+            ...prevState,
+            [id]: value
+        }))
+    }
+    return (
+        <div className="contact_container">
+            <div className="heading_cont">
+                <div className="heading">LET'S WORK</div>
+                <div className="subheading">TOGETHER</div>
+            </div>
+            <div className="form_cont">
+                <form onSubmit={(e) => e.preventDefault()}>
+                    <div className="group half">
+                        <label htmlFor="name" id='nameL'>Name</label>
+                        <input onChange={handleChange} type="text" id='name' placeholder='Your Name' />
+                    </div>
+                    <div className="group half">
+                        <label htmlFor="email" id='emailL'>Email</label>
+                        <input onChange={handleChange} type="email" id='email' placeholder='your@email.com' />
+                    </div>
+                    <div className="group full">
+                        <label htmlFor="EnquiryType" >Enquiry Type</label>
+                        <input type="" onFocus={(e) => showOptions(e)} onBlur={(e) => { hideOptions(e) }} id='EnquiryType' placeholder='-- Select --' value={formData.EnquiryType} readOnly />
+                        <div className="selectbox" id='selectbox' >
+                            <div className="options" value='Job Oportunity' onClick={(e) => handleOptionClick(e)}>Job Oportunity</div>
+                            <div className="options" value='Freelance Project' onClick={(e) => handleOptionClick(e)}>Freelance Project</div>
+                            <div className="options" value='Collaboration' onClick={(e) => handleOptionClick(e)}>Collaboration</div>
+                            <div className="options" value='Other' onClick={(e) => handleOptionClick(e)}>Other</div>
+                        </div>
+                    </div>
+                    <div className="group full">
+                        <label htmlFor="message">Message</label>
+                        <textarea onChange={handleChange} id="message" placeholder="What brings you here ?"></textarea>
+                    </div>
+                    <div className="frmbtncontainer full">
+                        <button type='submit' onClick={handleSubmit}><div className="btnnamecontainer"><div className="btnname" id='btnname'></div></div></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    )
+}
+export default ContactMe
