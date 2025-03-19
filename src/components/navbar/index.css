@@ -1,5 +1,5 @@
 .navbar {
-    background: hsl(210, 95%, 1%);
+    background-image: linear-gradient(hsla(204, 100%, 1%, 0.495) 80%,transparent);
     display: flex;
     justify-content: space-between;
     height: 100px;
