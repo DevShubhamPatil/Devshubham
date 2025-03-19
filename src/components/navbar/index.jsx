@@ -41,7 +41,7 @@ const Navbar = (props) => {
         };
     }, []);
 
-    const handleMouseHover = (source , destination) => {
+    const handleMouseHover = (source , destination, b=1) => {
         if (source === destination){
             return
         }
@@ -50,9 +50,10 @@ const Navbar = (props) => {
         const sourceId = Number(source.id)
         const destWidth = destination.getBoundingClientRect().width +30
         const destinationPosition = destination.getBoundingClientRect().left;
-        const jump = destId - sourceId;
-        const extra = (15 + Math.abs(jump)) * jump;
         const startpoint =document.getElementById('actvbg').getBoundingClientRect().left
+        b= (destinationPosition-startpoint)<0 ? -1 : 1
+        const jump = destId - sourceId;
+        const extra = (15 + Math.abs(jump)) * jump *b;
 
         const animation = [ { left: startpoint+'px', offset:0},
                             { left: (destinationPosition + extra) + 'px', width: (destWidth)+'px',offset:0.3 },
@@ -60,7 +61,7 @@ const Navbar = (props) => {
                             { left: (destinationPosition - (extra / 2)) + 'px', width: destWidth+'px',offset:0.6 },
                             { left: (destinationPosition + (extra / 4)) + 'px', width: destWidth+'px',offset:0.85},
                             { left: destinationPosition+'px' , width: destWidth+'px', offset:1}]
-        const options = {   duration:800,
+        const options = {   duration:jump>2? 800:650,
                             fill: 'forwards'
                         }
         document.getElementById('actvbg').animate(animation,options)
