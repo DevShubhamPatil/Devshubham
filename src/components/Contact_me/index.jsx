@@ -28,6 +28,7 @@ const ContactMe = () => {
         selectbox.style.opacity = '0'
         selectbox.style.visibility = 'hidden'
     }
+
     const handleOptionClick = (e) => {
         setFormData(prevState => ({
             ...prevState,
@@ -40,6 +41,16 @@ const ContactMe = () => {
         document.getElementById('EnquiryType').style.border = 'none'
     }
 
+    const handleChange = (e) => {
+        console.log("in here")
+        const { id, value } = e.target
+        validate(id, value)
+        setFormData(prevState => ({
+            ...prevState,
+            [id]: value
+        }))
+    }
+
     const validate = (id, value) => {
         if (id == 'name') {
             if (value.length < 2) {
@@ -47,20 +58,17 @@ const ContactMe = () => {
                     ...prevState,
                     name: true
                 })))
-                console.log('ERR')
             } else {
                 document.getElementById('name').style.border = 'none'
                 setFormerr((prevState => ({
                     ...prevState,
                     name: false
                 })))
-                console.log('NO ERR')
             }
             return
         }
         if (id == 'email') {
             if (!emailRegex.test(value)) {
-
                 setFormerr((prevState => ({
                     ...prevState,
                     email: true
@@ -103,24 +111,56 @@ const ContactMe = () => {
                 document.getElementById('EnquiryType').style.border = '2px red solid'
             return
         } else {
+            console.log("------------------- form data --------------------")
             console.log(formData)
-            //  animation-----------------------------------------
-            const btnname = document.getElementById('btnname')
-            btnname.style.setProperty('--submitanimation', 'submit 5s')
-            setTimeout(() => btnname.style.setProperty('--submitanimation', 'none'), 5000)
-            //  animation-----------------------------------------
+            sendEmail()
         }
     }
 
-    const handleChange = (e) => {
-        console.log("in here")
-        const { id, value } = e.target
-        validate(id, value)
-        setFormData(prevState => ({
-            ...prevState,
-            [id]: value
-        }))
+    const sendEmail = async () => {
+        const URL = "https://api.brevo.com/v3/smtp/email"
+        const key = process.env.REACT_APP_BREVO
+
+        const response = await fetch(URL,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "api-key": key
+                },
+                body: JSON.stringify({
+                    sender: { email: "shubh31patil@gmail.com", name: formData.name },
+                    to: [{ email: "to.shubhpatil@gmail.com", name: "Shubham Patil" }],
+                    subject: `DevShubham:${formData.EnquiryType} From ${formData.name}`,
+                    htmlContent: `<p>${formData.message}</p>
+                    <hr>
+                    <p>From</p>
+                    <p>${formData.name}</p>
+                    <p>${formData.email}</p>`
+                })
+            })
+        const data = await response.json();
+        if (response.ok) {
+            playSendBtnAnimaton()
+            setFormData({
+                name: '',
+                email: '',
+                EnquiryType: '',
+                message: ''
+            })
+        }
+        else {
+            alert("Failed :( ")
+            console.log(JSON.stringify(data))
+        }
     }
+
+    const playSendBtnAnimaton= () =>{
+        const btnname = document.getElementById('btnname')
+        btnname.style.setProperty('--submitanimation', 'submit 5s')
+        setTimeout(() => btnname.style.setProperty('--submitanimation', 'none'), 5000)
+    }
+    
     return (
         <div className="contact_container">
             <div className="heading_cont">
@@ -131,11 +171,11 @@ const ContactMe = () => {
                 <form onSubmit={(e) => e.preventDefault()}>
                     <div className="group half">
                         <label htmlFor="name" id='nameL'>Name</label>
-                        <input onChange={handleChange} type="text" id='name' placeholder='Your Name' />
+                        <input onChange={handleChange} type="text" id='name' placeholder='Your Name' value={formData.name}/>
                     </div>
                     <div className="group half">
                         <label htmlFor="email" id='emailL'>Email</label>
-                        <input onChange={handleChange} type="email" id='email' placeholder='your@email.com' />
+                        <input onChange={handleChange} type="email" id='email' placeholder='your@email.com' value={formData.email} />
                     </div>
                     <div className="group full">
                         <label htmlFor="EnquiryType" >Enquiry Type</label>
@@ -149,7 +189,7 @@ const ContactMe = () => {
                     </div>
                     <div className="group full">
                         <label htmlFor="message">Message</label>
-                        <textarea onChange={handleChange} id="message" placeholder="What brings you here ?"></textarea>
+                        <textarea onChange={handleChange} id="message" placeholder="What brings you here ?" value={formData.message}></textarea>
                     </div>
                     <div className="frmbtncontainer full">
                         <button type='submit' onClick={handleSubmit}><div className="btnnamecontainer"><div className="btnname" id='btnname'></div></div></button>
