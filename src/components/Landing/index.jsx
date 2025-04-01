@@ -4,6 +4,7 @@ import ContactMe from '../Contact_me';
 import { Element } from 'react-scroll';
 import Skills from '../Skills';
 import { redirect } from 'react-router-dom';
+import Footer from '../footer';
 
 
  
@@ -29,6 +30,7 @@ const Landing = () => {
             <Element name='contactme'>
                 <ContactMe />
             </Element>
+            <Footer/>
         </div>
     )
 }
