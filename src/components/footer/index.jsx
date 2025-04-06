@@ -3,7 +3,7 @@ import './index.css'
 const Footer = () =>{
 
     return (
-            <div className="footer">Made with ❤️ by <span className="hl">Shubham</span> © </div>
+            <div className="footer">Made With ❤️ By <span className="hl">Shubham.</span> © </div>
     )
 }
 

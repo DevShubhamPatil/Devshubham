@@ -2,17 +2,18 @@
     color: var(--normal_txt-color);
     font-family:  sans-serif;
     font-weight: 100;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1px;
     word-spacing: 4px;
     background-image: linear-gradient(90deg, transparent 2%,  hsl(233, 82%, 2%) 48% , transparent 98%);
     border-top: 1px solid;
-    border-image:linear-gradient(90deg, transparent 20%, white , transparent 80%);
+    border-image:linear-gradient(90deg, transparent 10%, rgb(218, 218, 218) , transparent 90%);
     border-image-slice: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40px;
+    padding-bottom: 10px;
 }
 .hl{
     color: var(--text_color);

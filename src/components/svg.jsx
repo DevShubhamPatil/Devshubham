@@ -38,8 +38,19 @@ export const fileDownload = <svg viewBox="0 0 24 24" fill="none" >
 
 export const logo =
     <svg className="logo" id="logo" stroke-linejoin="round" viewBox="38 38 124 124">
-        <polygon points="100,50 60,75 60,125 100,150 140,125 140,75 100,50" fill="none"
-            strokeLinecap="round">
+  <defs>
+    <filter id="glowing" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+      <feFlood flood-color="#ffffff" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+        <polygon id="hexa" points="100,50 60,75 60,125 100,150 140,125 140,75 100,50" fill="none"
+            strokeLinecap="round" filter="url(#glow-purple)">
         </polygon>
     </svg>
 

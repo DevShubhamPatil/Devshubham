@@ -11,7 +11,6 @@ import Footer from '../footer';
 
 const Landing = () => {
     const downloadResume = () =>{
-        console.log("doewnload")
         const atag = document.createElement("a")
         atag.setAttribute('href','https://drive.google.com/uc?export=download&id=1_40NA89ByJO9jzvkoVR-2dAzbc-4ZVw3')
         document.body.appendChild(atag);
