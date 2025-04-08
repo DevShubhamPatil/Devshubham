@@ -93,8 +93,13 @@
     border-radius: 50px / 100%;
     display: flex;
 }
+button:not(#frmbtn){
+    background: linear-gradient(to right, var(--highlight-color) 50%, transparent 50%) right;
+    background-size: 200% 100%;
+    transition: background-position 0.5s ease;
+}
 button:not(#frmbtn):hover{
-    animation: colourfill 0.3s ease-in  forwards;
+    background-position: left;
 }
 @keyframes colourfill {
     from{
