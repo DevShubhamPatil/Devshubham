@@ -12,11 +12,23 @@ const Navbar = (props) => {
     const [vh, setVH] = useState(window.innerHeight)
     const isAClick = useRef(false)
     const section = useRef(-1)
+    const { refs } = props
+
+    const getCurrentSection = () => {
+        const windowCenter = window.innerHeight*(0.45)
+        for (let ref of refs) {
+            const top = ref.current.getBoundingClientRect().top
+            const bottom = ref.current.getBoundingClientRect().bottom
+            if (top <= windowCenter && bottom >= windowCenter) {
+                return ref.current.id.charAt(0)
+            }
+        }
+        return 0
+    }
 
     const handleScroll = () => {
         // get currecnt section
-        var cursection = Math.floor((window.scrollY / vh) + 0.45)
-
+        var cursection = getCurrentSection()
         // apply selection annimation if the section is changhed and its not changed by clicking
         if (section.current != cursection && !isAClick.current) {
             handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), document.getElementById(cursection))
@@ -41,6 +53,8 @@ const Navbar = (props) => {
 
         window.addEventListener("scroll", handleScroll);
         window.addEventListener("resize", setDiamentions)
+        handleScroll()
+
         return () => {
             window.removeEventListener("scroll", handleScroll);
             window.removeEventListener("resize", setDiamentions)
@@ -91,10 +105,10 @@ const Navbar = (props) => {
                 </div>
                 <div className="navlinks_container">
                     <ol className='navlinks'>
-                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='0' data-active='false'> <Link onClick={(e) => { onlinkclick() }} to="home" smooth={true} duration={350} >About</Link> </li>
-                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='1' data-active='flase'> <Link onClick={(e) => { onlinkclick() }} to="Skills" smooth={true} duration={350}>Tech Skills</Link> </li>
-                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='2' data-active='false'> <Link onClick={(e) => { onlinkclick() }} to="contactme" smooth={true} duration={350}>ContactMe</Link> </li>
-                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='3' data-active='false'> <Link onClick={(e) => { onlinkclick() }} to="about" smooth={true} duration={350}>about</Link> </li>
+                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='0' data-active='false'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="home" smooth={true} duration={350} >About</Link> </li>
+                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='1' data-active='flase'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="Skills" smooth={true} duration={350}>Tech Skills</Link> </li>
+                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='2' data-active='false'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="contactme" smooth={true} duration={350}>Contact Me</Link> </li>
+                        {/* <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='3' data-active='false'> <Link onSetActive={(to)=>console.log(to)} to="about" smooth={true} duration={350}>about</Link> </li> */}
                         <li className={`nav_link btn_li ${navResumeVisible ? "" : "invisible"}`}>
                             <button className='resumeBTN' onClick={props.downloadResume}>
                                 <div className="navbtnsvg" id="resume">

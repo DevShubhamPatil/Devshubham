@@ -1,8 +1,9 @@
 /* ---------------------------------------------------------- Avatar -------------------------------------------------------------- */
 
 .container {
+    padding-top: 50px;
     width: 100%;
-    height: calc(100vh);
+    height: calc(80vh);
     /* max-height: 1000px; */
     display: flex;
     color: var(--text_color);
@@ -92,6 +93,36 @@
     border-radius: 50px / 100%;
     display: flex;
 }
+button:not(#frmbtn):hover{
+    animation: colourfill 0.3s ease-in  forwards;
+}
+@keyframes colourfill {
+    from{
+        background: transparent;
+    }
+    to{
+        background: var(--highlight-color);
+    } 
+}
+button:not(#frmbtn):active{
+    transform: scale(0.9);
+
+}
+@keyframes btnclk {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.9);
+
+    }
+    100%{
+        transform: scale(1);
+
+    }
+}
+
+
 
 .actioncall button .SVGs {
     width: 30px;

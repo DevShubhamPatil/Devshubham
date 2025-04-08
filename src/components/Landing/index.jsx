@@ -3,33 +3,44 @@ import Navbar from '../navbar'
 import ContactMe from '../Contact_me';
 import { Element } from 'react-scroll';
 import Skills from '../Skills';
-import { redirect } from 'react-router-dom';
 import Footer from '../footer';
+import { useRef } from 'react';
 
 
- 
+
 
 const Landing = () => {
-    const downloadResume = () =>{
+    const homeRef = useRef();
+    const skillsRef = useRef();
+    const contactmeRef = useRef();
+    const downloadResume = () => {
         const atag = document.createElement("a")
-        atag.setAttribute('href','https://drive.google.com/uc?export=download&id=1_40NA89ByJO9jzvkoVR-2dAzbc-4ZVw3')
+        atag.setAttribute('href', 'https://drive.google.com/uc?export=download&id=1_el40NA89ByJO9jzvkoVR-2dAzbc-4ZVw3')
         document.body.appendChild(atag);
         atag.click();
         document.body.removeChild(atag);
     }
     return (
         <div>
-            <Navbar downloadResume={downloadResume} />
-            <Element name='home' >
-                <Home downloadResume={downloadResume}/>
+            {/* <Navbar downloadResume={downloadResume} refs={{ 'home': homeRef, 'skills': skillsRef, 'contactme': contactmeRef }} /> */}
+            <Navbar downloadResume={downloadResume} refs={[homeRef, skillsRef, contactmeRef]}/>
+            <Element name='home'>
+                <div id="0el" ref={homeRef}>
+                    <Home downloadResume={downloadResume} />
+                </div>
             </Element>
             <Element name='Skills'>
-                <Skills />
+                <div id="1el" ref={skillsRef}>
+                    <Skills />
+                </div>
+
             </Element>
             <Element name='contactme'>
-                <ContactMe />
+                <div id="2el" ref={contactmeRef}>
+                    <ContactMe />
+                </div>
             </Element>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

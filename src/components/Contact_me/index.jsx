@@ -192,7 +192,7 @@ const ContactMe = () => {
                         <textarea onChange={handleChange} id="message" placeholder="What brings you here ?" value={formData.message}></textarea>
                     </div>
                     <div className="frmbtncontainer full">
-                        <button type='submit' onClick={handleSubmit}><div className="btnnamecontainer"><div className="btnname" id='btnname'></div></div></button>
+                        <button id='frmbtn' type='submit' onClick={handleSubmit}><div className="btnnamecontainer"><div className="btnname" id='btnname'></div></div></button>
                     </div>
                 </form>
             </div>
