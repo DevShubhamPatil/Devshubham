@@ -43,4 +43,4 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "\
         sudo rm -rf /temp/* && \
-        sudo mv /temp/build/* /var/www/html/"
+        sudo mv /temp/* /var/www/html/"
