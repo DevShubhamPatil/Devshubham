@@ -177,14 +177,40 @@ form button {
     width: 100%;
     animation: var(--submitanimation);
 }
+
+.loader{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: conic-gradient(rgb(255, 255, 255)40% , transparent);
+    position: relative;
+    animation: loading 1s linear infinite reverse;
+}
+.loader::after{
+    content: '';
+    position: absolute;
+    background-color: var(--highlight-color);
+    inset: 3px;
+    border-radius: 50%;
+}
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
 @keyframes submit {
     0%{
-        transform: translateY(0%);
-    }
-    5%{
         transform: translateY(-100%);
     }
-    95%{
+    1%{
+        transform: translateY(-100%);
+    }
+    90%{
         transform: translateY(-100%);
     }
     100%{

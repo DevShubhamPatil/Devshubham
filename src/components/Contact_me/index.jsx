@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './index.css'
 
 const ContactMe = () => {
@@ -15,6 +15,8 @@ const ContactMe = () => {
         EnquiryType: true,
         message: true
     })
+    const [submiting, setSubmiting] = useState(false);
+
 
     const showOptions = () => {
         const selectbox = document.getElementById("selectbox");
@@ -111,6 +113,7 @@ const ContactMe = () => {
                 document.getElementById('EnquiryType').style.border = '2px red solid'
             return
         } else {
+            setSubmiting(true)
             console.log("------------------- form data --------------------")
             console.log(formData)
             sendEmail()
@@ -141,7 +144,10 @@ const ContactMe = () => {
             })
         const data = await response.json();
         if (response.ok) {
+            setSubmiting(false)
+            setTimeout(() => {
             playSendBtnAnimaton()
+        }, 1);
             setFormData({
                 name: '',
                 email: '',
@@ -157,8 +163,8 @@ const ContactMe = () => {
 
     const playSendBtnAnimaton= () =>{
         const btnname = document.getElementById('btnname')
-        btnname.style.setProperty('--submitanimation', 'submit 5s')
-        setTimeout(() => btnname.style.setProperty('--submitanimation', 'none'), 5000)
+        btnname.style.setProperty('--submitanimation', 'submit 6s')
+        setTimeout(() => btnname.style.setProperty('--submitanimation', 'none'), 6000)
     }
     
     return (
@@ -192,7 +198,7 @@ const ContactMe = () => {
                         <textarea onChange={handleChange} id="message" placeholder="What brings you here ?" value={formData.message}></textarea>
                     </div>
                     <div className="frmbtncontainer full">
-                        <button id='frmbtn' type='submit' onClick={handleSubmit}><div className="btnnamecontainer"><div className="btnname" id='btnname'></div></div></button>
+                        <button id='frmbtn' type='submit' onClick={handleSubmit}><div className="btnnamecontainer">{submiting ? <div className='loader'></div> :<div className="btnname" id='btnname'></div>}</div></button>
                     </div>
                 </form>
             </div>
