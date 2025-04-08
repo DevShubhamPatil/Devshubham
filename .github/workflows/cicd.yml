@@ -34,10 +34,5 @@ jobs:
           sudo rm -rf /var/www/html/*
 
     - name: Upload new build files to EC2
-      uses: appleboy/scp-action@v0.1.4
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
-        key: ${{ secrets.EC2_KEY }}
-        source: "build/*"
-        target: "/var/www/html/"
+      run: |
+        scp -o StrictHostKeyChecking=no -i key.pem -r build/* ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/
