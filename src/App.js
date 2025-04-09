@@ -3,6 +3,7 @@ import LoadingAnimation from './components/LoadingAnimation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import { useEffect, useState } from 'react';
+import Experiance from './components/Experiance';
 
 function App() {
 const [isLanding , setIsLanding] = useState(false)
@@ -15,7 +16,7 @@ useEffect(() => {
   const bgDiv = document.getElementById("bg");
 
   const handleMouseMove = (event) => {
-    bgDiv.style.maskImage = `radial-gradient(${window.innerWidth < 826 ? '200px': '550px'} at ${event.clientX}px ${event.clientY}px, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 100%)`;
+    bgDiv.style.maskImage = `radial-gradient(${window.innerWidth < 826 ? '200px': '450px'} at ${event.clientX}px ${event.clientY}px, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 100%)`;
   };
   document.addEventListener("mousemove", handleMouseMove);
   return () => {

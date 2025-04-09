@@ -1,17 +1,19 @@
 .skillscontainer {
-    min-height: calc(80vh);
+    min-height: calc(50vh);
     color: aliceblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    /* border: 1px green solid; */
 }
 
 .skillheading {
     font-weight: 500;
-    font-size: 45px;
+    font-size: 60px;
     line-height: 150px;
     letter-spacing: -2px;
     word-spacing: 10px;

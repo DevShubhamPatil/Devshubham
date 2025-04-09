@@ -9,6 +9,8 @@
     color: var(--text_color);
     justify-content: center;
     align-items: center;
+    /* border: 1px white solid; */
+
 }
 
 ::-webkit-scrollbar {
