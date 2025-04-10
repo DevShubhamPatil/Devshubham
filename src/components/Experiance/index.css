@@ -77,21 +77,53 @@ pre {
 
 @media screen and (max-width: 936px) {
     .EContent {
-        min-width: 99%;
+        min-width: 95%;
+
     }
 
     .line {
         min-width: 7px;
         margin-left: 10px;
+        display: none;
     }
 
     .expdetails {
-        margin-left: 20px;
+        margin-left: 10px;
+    }
+
+    pre {
+        position: relative;
+        padding-left: 10px;
+    }
+
+    .preclass {
+        height: 80px; 
+        border: 1px rgba(255, 255, 255, 0.153) solid;
+        border-radius: 10px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.092);
+        backdrop-filter: blur(3px);
+
+    }
+
+    .preclass::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 5px;
+        left: 0px;
+        background: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.523));
+    }
+
+    pre:active {
+        filter: brightness(5);
     }
 
     .expcont::before {
         height: 17px;
         width: 17px;
         left: -32px;
+        display: none;
     }
 }
