@@ -17,7 +17,8 @@ const Landing = () => {
     const expRef = useRef();
     const downloadResume = () => {
         const atag = document.createElement("a")
-        atag.setAttribute('href', 'https://drive.google.com/uc?export=download&id=1_el40NA89ByJO9jzvkoVR-2dAzbc-4ZVw3')
+        atag.setAttribute('href', '/Resume.pdf')
+        atag.setAttribute('download', 'Shubham Patil.pdf')
         document.body.appendChild(atag);
         atag.click();
         document.body.removeChild(atag);
