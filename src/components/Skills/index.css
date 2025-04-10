@@ -18,6 +18,7 @@
     letter-spacing: -2px;
     word-spacing: 10px;
     color: var(--text_color);
+    transition: 0.3s linear ;
 }
 
 .techcontainer {
@@ -40,7 +41,7 @@
     background-color: black;
     overflow: hidden;
     padding: 3px;
-
+    transition: 0.3s linear ;
 }
 
 .border::before {

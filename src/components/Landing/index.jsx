@@ -4,7 +4,7 @@ import ContactMe from '../Contact_me';
 import { Element } from 'react-scroll';
 import Skills from '../Skills';
 import Footer from '../footer';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Experiance from '../Experiance';
 
 
@@ -23,10 +23,36 @@ const Landing = () => {
         atag.click();
         document.body.removeChild(atag);
     }
+
+    const slidein = () => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((entry,index) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay =  `${index * 50}ms`
+                    entry.target.classList.remove('hidden')
+                    observer.unobserve(entry.target)
+                }
+            })
+        },
+        {
+            root: null,
+            rootMargin: `-70% 0px -30% 0px`,
+            threshold: 0,
+          }
+        )
+
+        const hiddenitems = document.querySelectorAll(".hidden");
+        hiddenitems.forEach((el) => {
+            observer.observe(el);
+        });
+    }
+
+    useEffect(slidein,[])
+
     return (
         <div>
             {/* <Navbar downloadResume={downloadResume} refs={{ 'home': homeRef, 'skills': skillsRef, 'contactme': contactmeRef }} /> */}
-            <Navbar downloadResume={downloadResume} refs={[homeRef, skillsRef,expRef, contactmeRef]}/>
+            <Navbar downloadResume={downloadResume} refs={[homeRef, skillsRef, expRef, contactmeRef]} />
             <Element name='home'>
                 <div id="0el" ref={homeRef}>
                     <Home downloadResume={downloadResume} />
@@ -39,7 +65,7 @@ const Landing = () => {
             </Element>
             <Element name='experiance'>
                 <div id="2el" ref={expRef}>
-                    <Experiance/>
+                    <Experiance />
                 </div>
             </Element>
             <Element name='contactme'>

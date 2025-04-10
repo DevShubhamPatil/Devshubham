@@ -27,6 +27,11 @@
     border-image-source: conic-gradient( from 20deg, #f9ce34, #ee2a7b, #6228d7,#f9ce34);
     border-image-slice: 1;
     border-radius: 10px;
+    transition: 0.3s linear ;
+}
+.HomeHidden{
+    transform: translateY(50px);
+    opacity: 0;
 }
 
 .face {
@@ -44,7 +49,7 @@
     margin-right: 1vw;
     padding: 20px;
     box-sizing: border-box;
-
+    transition: 0.3s linear ;
 }
 
 .line1 {

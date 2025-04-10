@@ -169,12 +169,12 @@ const ContactMe = () => {
     
     return (
         <div className="contact_container">
-            <div className="heading_cont">
+            <div className="heading_cont hidden">
                 <div className="heading">LET'S WORK</div>
                 <div className="subheading">TOGETHER</div>
             </div>
             <div className="form_cont">
-                <form onSubmit={(e) => e.preventDefault()}>
+                <form className='hidden' onSubmit={(e) => e.preventDefault()}>
                     <div className="group half">
                         <label htmlFor="name" id='nameL'>Name</label>
                         <input onChange={handleChange} type="text" id='name' placeholder='Your Name' value={formData.name}/>

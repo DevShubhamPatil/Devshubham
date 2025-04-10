@@ -4,20 +4,20 @@ const Experiance = () => {
     const data = `• Led the development of a message parsing application to automate the XML messages generation from text files to be processed by downstream application, Improving the trade processing speed by 20%.\n• Enhanced security compliance by integrating Vault to eliminate hardcoded passwords and certificates by 100%, collaborating with cross-functional teams to strengthen security protocols and mitigate risks.\n• Reduced system downtime by 25% with problem-solving and teamwork with colleagues and cross-functional teams to resolve critical production issues, fix the disaster recovery (DR) of an application, and remove Vulnerable dependencies from applications.\n• Lowered operational costs by 15% by leading the decommissioning of legacy applications and infrastructure\n• Ensured regulatory compliance by archiving data, mitigating potential legal risks through attention to detail.`
 
     const togglereadmore = () => {
-        const cs = document.getElementById('cs')
+        const cs = document.getElementById('cs') 
         cs.classList.toggle('preclass')
-    }
+    } 
     return (
         <div className="ExpContainer">
-            <div className="skillheading">Experiance</div>
+            <div className="skillheading hidden">Experiance</div>
             <div className="EContent">
                 <div className="line"></div>
                 <div className="expdetails">
-                    <div className="expcontdumy"></div>
+                    <div className="expcontdumy hidden"></div>
 
-                    <div className="expcont">
+                    <div className="expcont hidden">
                         <div>
-                            <span className="line1" style={{fontSize:'1.3rem', lineHeight: '1rem', padding: '5px', marginLeft: '-15px' }}>
+                            <span className="line1" style={{fontSize:'1.4em', lineHeight: '1rem', padding: '5px', marginLeft: '-15px' }}>
                                 Credit Suisse (UBS) :
                             </span>
                             <span style={{display:'inline-block'}}>
@@ -36,10 +36,10 @@ const Experiance = () => {
 
                     </div>
 
-                    <div className="expcontdumy"></div>
+                    <div className="expcontdumy hidden"></div>
 
-                    <div className="expcont">
-                        <span className="line1" style={{ lineHeight: '1rem', padding: '5px 20px 5px 5px', marginLeft: '-15px', position: 'relative' }}>
+                    <div className="expcont hidden">
+                        <span className="line1" style={{fontSize:'1.4rem', lineHeight: '1rem', padding: '5px 20px 5px 5px', marginLeft: '-15px', position: 'relative' }}>
                             Next Adventure
                             <i style={{ fontSize: '2rem', position: 'absolute', top: '0.7rem' }}>!</i>
                         </span>
@@ -49,7 +49,7 @@ const Experiance = () => {
                         </span>
                     </div>
 
-                    <div className="expcontdumy"></div>
+                    <div className="expcontdumy hidden"></div>
 
 
                 </div>

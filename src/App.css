@@ -33,3 +33,7 @@
     z-index: -1;
 
 }
+.hidden{
+    transform: translateY(50px);
+    opacity: 0;
+}

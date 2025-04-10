@@ -26,6 +26,14 @@ const Navbar = (props) => {
         return 0
     }
 
+    const startupAnimation = () =>{
+        const list = document.getElementsByClassName('navHidden')
+        Array.from(list).forEach((element,index) => {
+            element.style.transitionDelay =  `${index * 120}ms`
+            element.classList.remove('navHidden')
+        });
+    }
+
     const handleScroll = () => {
         // get currecnt section
         var cursection = getCurrentSection()
@@ -54,7 +62,9 @@ const Navbar = (props) => {
         window.addEventListener("scroll", handleScroll);
         window.addEventListener("resize", setDiamentions)
         handleScroll()
-
+        setTimeout(() => {
+        startupAnimation()
+        }, 400);
         return () => {
             window.removeEventListener("scroll", handleScroll);
             window.removeEventListener("resize", setDiamentions)
@@ -98,16 +108,17 @@ const Navbar = (props) => {
     return (
         <>
             <nav id="nav" className={`navbar ${scrolled ? "shadow" : ""}`}>
-                <div className='logocontainer'>
+                <div id='navLogo' className='logocontainer navHidden'>
                     <div className="Slogo">s</div>
                     {logo}
                 </div>
                 <div className="navlinks_container">
                     <ol className='navlinks'>
-                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='0' data-active='false'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="home" smooth={true} duration={350} >About</Link> </li>
-                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='1' data-active='flase'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="Skills" smooth={true} duration={350}>Tech Skills</Link> </li>
-                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='2' data-active='false'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="experiance" smooth={true} duration={350}>Experiance</Link> </li>
-                        <li className='nav_link' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='3' data-active='false'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="contactme" smooth={true} duration={400}>Contact Me</Link> </li>
+                        <li className='nav_link navHidden' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='0' data-active='false'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="home" smooth={true} duration={350} >About</Link> </li>
+                        <div className="active navHidden" id='actvbg'></div>
+                        <li className='nav_link navHidden' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='1' data-active='flase'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="Skills" smooth={true} duration={350}>Tech Skills</Link> </li>
+                        <li className='nav_link navHidden' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='2' data-active='false'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="experiance" smooth={true} duration={350}>Experiance</Link> </li>
+                        <li className='nav_link navHidden' onMouseEnter={(e) => handleMouseHover(document.getElementById(section.current < 0 ? 0 : section.current), e.currentTarget)} onMouseLeave={(e) => handleMouseHover(e.currentTarget, document.getElementById(section.current < 0 ? 0 : section.current))} id='3' data-active='false'> <Link style={{padding:'10px 0px'}} onClick={onlinkclick} to="contactme" smooth={true} duration={400}>Contact Me</Link> </li>
                         <li className={`nav_link btn_li ${navResumeVisible ? "" : "invisible"}`}>
                             <button className='resumeBTN' onClick={props.downloadResume}>
                                 <div className="navbtnsvg" id="resume">
@@ -122,7 +133,6 @@ const Navbar = (props) => {
                                 {hamb}
                             </div>
                         </li>
-                        <div className="active" id='actvbg'></div>
 
                     </ol>
                 </div>

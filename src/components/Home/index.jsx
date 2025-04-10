@@ -3,34 +3,50 @@ import Me from '../imgs/myimg.png'
 
 import { LinkdInSVG, GitHubSVG, InstaSVG, xsvg, WhatsAppSVG, eMailSVG, fileDownload, copy } from '../svg'
 import client from 'react-dom/client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 const Home = (props) => {
-    
-const handlecopy =(event)=>{
-    console.log('handlecopy')
-    navigator.clipboard.writeText('npx devshubham')
-    const copybtn = document.getElementById('copybtn')
-    copybtn.style.setProperty('--visibility','visible')
-    setTimeout(()=>{
-    copybtn.style.setProperty('--visibility','hidden')
-    },1500)
-}
+
+    const handlecopy = (event) => {
+        console.log('handlecopy')
+        navigator.clipboard.writeText('npx devshubham')
+        const copybtn = document.getElementById('copybtn')
+        copybtn.style.setProperty('--visibility', 'visible')
+        setTimeout(() => {
+            copybtn.style.setProperty('--visibility', 'hidden')
+        }, 1500)
+    }
+
+    const startupAnimation = () =>{
+        const list = document.getElementsByClassName('HomeHidden')
+        Array.from(list).forEach((element,index) => {
+            element.style.transitionDelay =  `${index * 300}ms`
+            element.classList.remove('HomeHidden')
+        });
+    }
+
+    useEffect(()=>{
+        setTimeout(() => {
+            startupAnimation()
+        }, 1400);
+    },[])
+
+
     return (
         <>
             <div className="container">
-                <div className="headline">
+                <div className="headline HomeHidden">
                     <p className="line1">Hi, my name is,</p>
                     <div className="name">Shubham Patil.</div>
                     <div className="whatIdo">I build things for the Web.</div>
                     <div className="actioncall">
                         <button id='copybtn' onClick={handlecopy}>
-                        <div className="btntxt">npx devshubham</div>
+                            <div className="btntxt">npx devshubham</div>
                             <div className="SVGs" id='copy'>
                                 {copy}
                             </div>
                         </button>
                         <button onClick={props.downloadResume}>
-                        <div className="btntxt">Resume</div>
+                            <div className="btntxt">Resume</div>
                             <div className="SVGs" id="resume">
                                 {fileDownload}
                             </div>
@@ -70,11 +86,11 @@ const handlecopy =(event)=>{
                     </div>
 
                 </div>
-                <div className="mainbodycontainer">
-                <div className="bodycontainer" id="avatar">
-                    <img id="face" className="face" src={Me} alt="" />
-                </div>
-                
+                <div className="mainbodycontainer ">
+                    <div className="bodycontainer HomeHidden" id="avatar">
+                        <img id="face" className="face" src={Me} alt="" />
+                    </div>
+
                 </div>
             </div>
 

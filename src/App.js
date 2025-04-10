@@ -3,7 +3,6 @@ import LoadingAnimation from './components/LoadingAnimation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import { useEffect, useState } from 'react';
-import Experiance from './components/Experiance';
 
 function App() {
 const [isLanding , setIsLanding] = useState(false)

@@ -32,10 +32,10 @@ const Skills = () => {
 
     return (
         <div className="skillscontainer">
-            <div className="skillheading">Tech Skills</div>
+            <div className="skillheading hidden">Tech Skills</div>
             <div className="techcontainer">
                 {SkillArr.map((skill) => (
-                    <div className="border" onClick={runclickanimation}><div className="content"><div>{skill.svg}</div><div>{skill.title}</div></div></div>
+                    <div className="border hidden" onClick={runclickanimation}><div className="content"><div>{skill.svg}</div><div>{skill.title}</div></div></div>
                 ))}
             </div>
         </div>
