@@ -12,10 +12,10 @@ const Experiance = () => {
             <div className="skillheading hidden">Experiance</div>
             <div className="EContent">
                 <div className="line"></div>
-                <div className="expdetails">
-                    <div className="expcontdumy hidden"></div>
+                <div className="expdetails hidden">
+                    <div className="expcontdumy"></div>
 
-                    <div className="expcont hidden">
+                    <div className="expcont">
                         <div>
                             <span className="line1" style={{fontSize:'1.4em', lineHeight: '1rem', padding: '5px', marginLeft: '-15px' }}>
                                 Credit Suisse (UBS) :
@@ -36,9 +36,9 @@ const Experiance = () => {
 
                     </div>
 
-                    <div className="expcontdumy hidden"></div>
+                    <div className="expcontdumy"></div>
 
-                    <div className="expcont hidden">
+                    <div className="expcont">
                         <span className="line1" style={{fontSize:'1.4rem', lineHeight: '1rem', padding: '5px 20px 5px 5px', marginLeft: '-15px', position: 'relative' }}>
                             Next Adventure
                             <i style={{ fontSize: '2rem', position: 'absolute', top: '0.7rem' }}>!</i>
@@ -49,9 +49,7 @@ const Experiance = () => {
                         </span>
                     </div>
 
-                    <div className="expcontdumy hidden"></div>
-
-
+                    <div className="expcontdumy"></div>
                 </div>
             </div>
         </div>

@@ -28,7 +28,7 @@ const Landing = () => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach((entry,index) => {
                 if (entry.isIntersecting) {
-                    entry.target.style.transitionDelay =  `${index * 50}ms`
+                    entry.target.style.transitionDelay =  `${index * 100}ms`
                     entry.target.classList.remove('hidden')
                     observer.unobserve(entry.target)
                 }
@@ -36,7 +36,7 @@ const Landing = () => {
         },
         {
             root: null,
-            rootMargin: `-70% 0px -30% 0px`,
+            rootMargin: `${window.innerWidth>826 ? '-70% 0px -30% 0px':'-80% 0px -20% 0px'}`,
             threshold: 0,
           }
         )

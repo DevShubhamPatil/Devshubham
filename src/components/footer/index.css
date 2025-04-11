@@ -21,3 +21,9 @@
     font-weight: 500;
     margin: 0px 10px;
 }
+
+@media screen and (max-width: 826px) {
+.footer{
+    margin-top: 20px;
+}
+}

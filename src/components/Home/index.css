@@ -4,13 +4,10 @@
     padding-top: 50px;
     width: 100%;
     height: calc(80vh);
-    /* max-height: 1000px; */
     display: flex;
     color: var(--text_color);
     justify-content: center;
     align-items: center;
-    /* border: 1px white solid; */
-
 }
 
 ::-webkit-scrollbar {
@@ -235,11 +232,12 @@ button:not(#frmbtn):active{
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+        /* padding: 0; */
     }
 
     .bodycontainer {
-        margin-top: 80px;
-        transform: scale(0.7);
+        margin-top: 60px;
+        transform: scale(0.8);
     }
 
     .name {
@@ -264,13 +262,20 @@ button:not(#frmbtn):active{
         align-items: center;
         justify-content: center;
         height: 60px;
+        padding-top: 8px;
+        padding:8px 16px 2px 16px;
+        border-radius: 60px / 90%;
     }    
     .actioncall button .SVGs {
         margin: 0;
         padding: 0px;
+        transform: scaleY(0.9);
     }
     .btntxt {
         font-size: clamp(15px ,4vw,20px);
+        line-height: 0px;
+        /* border: 1px red solid; */
+        margin-top: -5px;
     }
     #copybtn::before{
         top:-128%;

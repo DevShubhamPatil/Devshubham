@@ -35,7 +35,7 @@
     margin-left: 40px;
     height: fit-content;
     /* border: yellow 1px solid; */
-
+    transition: 0.7s linear ;
 }
 
 .expcont {
@@ -44,7 +44,7 @@
     box-sizing: border-box;
     padding: 10px;
     position: relative;
-    transition: 0.3s linear ;
+    transition: 0.7s linear ;
 }
 
 .expcont::before {
@@ -126,5 +126,11 @@ pre {
         width: 17px;
         left: -32px;
         display: none;
+    }
+
+}
+@media screen and (max-width: 826px) {
+    .ExpContainer {
+        padding: 50px 0 50px 0;
     }
 }

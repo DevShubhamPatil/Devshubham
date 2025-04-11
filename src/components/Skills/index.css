@@ -18,7 +18,7 @@
     letter-spacing: -2px;
     word-spacing: 10px;
     color: var(--text_color);
-    transition: 0.3s linear ;
+    transition: 0.5s linear ;
 }
 
 .techcontainer {
@@ -32,6 +32,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    /* border: red 1px solid; */
 }
 
 .border {
@@ -41,7 +42,7 @@
     background-color: black;
     overflow: hidden;
     padding: 3px;
-    transition: 0.3s linear ;
+    transition: 0.5s linear ;
 }
 
 .border::before {
@@ -100,6 +101,10 @@
 }
 
 @media screen and (max-width: 826px) {
+.skillscontainer {
+    padding: 50px 0 50px 0;
+
+}
     .techcontainer {
         min-width: 100%;
     }
@@ -110,9 +115,9 @@
     }
 
     .content {
-        width: 120px;
+        width: 130px;
         padding: 2px;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     .content svg {
