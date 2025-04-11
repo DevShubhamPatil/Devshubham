@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  REACT_APP_BREVO: ${{ secrets.REACT_APP_BREVO }}
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

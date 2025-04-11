@@ -44,7 +44,6 @@ const ContactMe = () => {
     }
 
     const handleChange = (e) => {
-        console.log("in here")
         const { id, value } = e.target
         validate(id, value)
         setFormData(prevState => ({
@@ -156,7 +155,8 @@ const ContactMe = () => {
             })
         }
         else {
-            alert("Failed :( ")
+            alert("Failed to deliver your message ☹️\nPlease connect using other links in About ")
+            setSubmiting(false)
             console.log(JSON.stringify(data))
         }
     }
