@@ -115,38 +115,36 @@ const ContactMe = () => {
             setSubmiting(true)
             console.log("------------------- form data --------------------")
             console.log(formData)
+            // const fd = new FormData(document.getElementById('form_contact_me'))
+            // console.log(fd)
             sendEmail()
         }
     }
 
     const sendEmail = async () => {
-        const URL = "https://api.brevo.com/v3/smtp/email"
-        const key = process.env.REACT_APP_BREVO
+        const URL = "https://api.web3forms.com/submit"
+        const key = "76bb3824-e79f-474d-aced-3a754f5d9f0f"
 
         const response = await fetch(URL,
             {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "api-key": key
-                },
+                   headers: {
+     'Content-Type': 'application/json',
+   },
                 body: JSON.stringify({
-                    sender: { email: "shubh31patil@gmail.com", name: formData.name },
-                    to: [{ email: "to.shubhpatil@gmail.com", name: "Shubham Patil" }],
+                    access_key: key,
+                    email: formData.email,
                     subject: `DevShubham:${formData.EnquiryType} From ${formData.name}`,
-                    htmlContent: `<p>${formData.message}</p>
-                    <hr>
-                    <p>From</p>
-                    <p>${formData.name}</p>
-                    <p>${formData.email}</p>`
-                })
+                    message: formData.message,
+                }),
             })
         const data = await response.json();
-        if (response.ok) {
+        console.log(data)
+        if (data.success) {
             setSubmiting(false)
             setTimeout(() => {
-            playSendBtnAnimaton()
-        }, 1);
+                playSendBtnAnimaton()
+            }, 1);
             setFormData({
                 name: '',
                 email: '',
@@ -161,23 +159,23 @@ const ContactMe = () => {
         }
     }
 
-    const playSendBtnAnimaton= () =>{
+    const playSendBtnAnimaton = () => {
         const btnname = document.getElementById('btnname')
         btnname.style.setProperty('--submitanimation', 'submit 6s')
         setTimeout(() => btnname.style.setProperty('--submitanimation', 'none'), 6000)
     }
-    
+
     return (
         <div className="contact_container">
             <div className="heading_cont hidden">
                 <div className="heading">LET'S WORK</div>
                 <div className="subheading">TOGETHER</div>
             </div>
-            <div className="form_cont">
+            <div className="form_cont" id='form_contact_me'>
                 <form className='hidden' onSubmit={(e) => e.preventDefault()}>
                     <div className="group half">
                         <label htmlFor="name" id='nameL'>Name</label>
-                        <input onChange={handleChange} type="text" id='name' placeholder='Your Name' value={formData.name}/>
+                        <input onChange={handleChange} type="text" id='name' placeholder='Your Name' value={formData.name} />
                     </div>
                     <div className="group half">
                         <label htmlFor="email" id='emailL'>Email</label>
@@ -198,7 +196,7 @@ const ContactMe = () => {
                         <textarea onChange={handleChange} id="message" placeholder="What brings you here ?" value={formData.message}></textarea>
                     </div>
                     <div className="frmbtncontainer full">
-                        <button id='frmbtn' type='submit' onClick={handleSubmit}><div className="btnnamecontainer">{submiting ? <div className='loader'></div> :<div className="btnname" id='btnname'></div>}</div></button>
+                        <button id='frmbtn' type='submit' onClick={handleSubmit}><div className="btnnamecontainer">{submiting ? <div className='loader'></div> : <div className="btnname" id='btnname'></div>}</div></button>
                     </div>
                 </form>
             </div>
